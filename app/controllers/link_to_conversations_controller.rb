@@ -1,0 +1,2 @@
+class LinkToConversationsController < ApplicationController
+end
