@@ -5,6 +5,5 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @games = current_user.games
   end
 end
