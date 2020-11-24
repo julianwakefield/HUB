@@ -1,8 +1,8 @@
 <h1>Edit your post</h1>
 </div>
-  <%= simple_form_for([@games, @posts]) do |f| %>
+  <%= simple_form_for([@game, @post]) do |f| %>
     <%= f.input :content%>
     <%= f.submit :submit  %>
   <% end %>
-  <%= link_to "Back", game_path %>
+  <!-- <%= link_to "Back", game_path %> -->
 </div>
