@@ -19,13 +19,12 @@
     top: 100px;
     right: 20px;
     margin-left: 20px;
-    background-color: transparent;  
+    background-color: transparent;
     color: black;
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     justify-content: left;
 }
-  
 
 #background {
     position: fixed;
@@ -40,7 +39,7 @@
     transform: translateX(-50%) translateY(-50%);
     background: image-url('bg.png') no-repeat;
     background-size: cover;
-    }
+}
 
 // .banner-h1 {
 //     color: white;
