@@ -1,3 +1,8 @@
-<% @games.each do |game| %>
-<%= game.name %>
+<h1>All Games</h1>
+<ul><% @games.each do |game| %>
+<li><%= game.name %></li> <button type="button">Like</button>
 <% end %>
+</ul>
+
+
+<%# document.addEventListener('click' %>
