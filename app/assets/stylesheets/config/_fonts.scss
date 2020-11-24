@@ -14,3 +14,19 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+   font-family: 'Whitney Bold';
+   // src: url('/path-to/font-file.file-extension');
+   src: url('/assets/whitneybold.otf')
+}
+
+@font-face {
+   font-family: 'Whitney Semi Bold';
+   src: url('/assets/whitneysemibold.otf')
+}
+
+@font-face {
+   font-family: 'Whitney Medium';
+   src: url('/assets/whitneymedium.otf')
+}

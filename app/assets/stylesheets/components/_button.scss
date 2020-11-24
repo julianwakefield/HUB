@@ -1,0 +1,15 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  font-family: 'Whitney Medium';
+  font-size: 16px;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+  text-decoration: none;
+}
