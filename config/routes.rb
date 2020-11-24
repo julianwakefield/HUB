@@ -10,4 +10,7 @@ Rails.application.routes.draw do
      resources :comments, only: [:create, :update, :destroy]
     end
   end
+
+  # resources :users, only: [:show]
+  get '/dashboard', to: 'pages#dashboard'
 end
