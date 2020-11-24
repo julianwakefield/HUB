@@ -1,0 +1,7 @@
+</div>
+<%= simple_form_for([@games, @post]) do |f| %>
+  <%= f.input :content %>
+  <%= f.submit :submit  %>
+<% end %>
+<%= link_to "Back", game_path(@game) %>
+</div>
