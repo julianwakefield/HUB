@@ -1,0 +1,39 @@
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 95%;
+  margin: auto;
+}
+
+.home-card2 {
+  background-color: white;
+  height: 600px;
+  width: 65%;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 75px;
+  margin-right: 25px;
+  margin-top: 25px;
+  display: flex;
+  padding: 8px;
+  padding-top: 16px;
+
+}
+
+.home-card1 {
+  background-color: white;
+  height: 600px;
+  padding-top: 130px;
+  width: 30%;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 75px;
+  margin-left: 25px;
+  margin-top: 25px;
+  padding: 8px;
+  padding-top: 16px;
+}
