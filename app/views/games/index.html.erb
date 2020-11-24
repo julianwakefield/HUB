@@ -1,6 +1,14 @@
 <h1>All Games</h1>
 <ul><% @games.each do |game| %>
-<li><%= game.name %></li> <button type="button">Like</button>
+  <li>
+    <%= game.name %>
+    <% user_game =  current_user.user_games.find_by(game: game) %>
+    <% if user_game.nil?  %>
+      <%= link_to 'Like',  game_user_games_path(game), method: :post %>
+     <% else %>
+      <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+    <% end %>
+  </li> 
 <% end %>
 </ul>
 

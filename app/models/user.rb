@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts
   has_many :comments
-  has_many :games_i_likes
+  has_many :user_games
   has_many :messages
   has_many :chats, :through => :link_to_conversation
-  has_many :games, :through => :games_i_like
+  has_many :games, :through => :user_games
 end

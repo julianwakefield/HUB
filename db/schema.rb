@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "games_i_likes", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_games_i_likes_on_game_id"
+    t.index ["user_id"], name: "index_games_i_likes_on_user_id"
+  end
+
   create_table "link_to_conversations", force: :cascade do |t|
     t.bigint "chat_id", null: false
     t.bigint "user_id", null: false
@@ -95,6 +104,8 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
   add_foreign_key "chats", "games"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "games_i_likes", "games"
+  add_foreign_key "games_i_likes", "users"
   add_foreign_key "link_to_conversations", "chats"
   add_foreign_key "link_to_conversations", "users"
   add_foreign_key "messages", "chats"
