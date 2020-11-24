@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+.home-banner {
+    background-size: cover;
+    background-position: center;
+    // padding: 150px 0;
+    height: 700px;
+    background-size: 70% 100%;
+    background-position: left top;
+    background-color: transparent;
+}
+
+.home-banner-child {
+    height: 700px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 280px;
+    width: 500px;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    margin-left: 20px;
+    background-color: transparent;  
+    color: black;
+    display: flex;
+    flex-direction: column;  
+    justify-content: left;
+}
+  
+
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: image-url('bg.png') no-repeat;
+    background-size: cover;
+    }
+
+// .banner-h1 {
+//     color: white;
+// }
+
+// .banner-h2 {
+//     color: white;
+// }
+
+// .banner-h3 {
+//     color: white;
+// }
+
+// .banner-p {
+//     color: white;
+// }
+
+path {
+    will-change: transform, stroke-dashoffset;
+  }
