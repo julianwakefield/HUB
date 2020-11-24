@@ -1,0 +1,8 @@
+<h1>Add a Game</h1>
+</div>
+  <%= simple_form_for([@games]) do |f| %>
+    <%= f.input :name%>
+    <%= f.submit :submit  %>
+  <% end %>
+  <%= link_to "Back", game_path %>
+</div>
