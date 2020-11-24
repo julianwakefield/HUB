@@ -1,8 +1,8 @@
 class CreateUserGames < ActiveRecord::Migration[6.0]
   def change
     create_table :user_games do |t|
-      t.game :references
-      t.user :references
+      t.references :game, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
