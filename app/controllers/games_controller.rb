@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    def index
+      def index
         @games = Game.all
       end
       def new
@@ -18,6 +18,7 @@ class GamesController < ApplicationController
       
       def show
         @game = Game.find(params[:id])
+        @comment = Comment.new
       end
       def edit
         @games = game.find(params[:id])
