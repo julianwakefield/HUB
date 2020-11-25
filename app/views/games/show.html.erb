@@ -5,7 +5,7 @@
         <div>
             <ul><% @game.posts.each do |post| %>
                 <li>
-                  <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+                  <%= cl_image_tag post.photo.key, height: 300, width: 40, crop: :fill %>
                 <%= post.content %>
                 <%= simple_form_for [@game,post,@comment] do |f| %>
                   <%= f.input :content %>

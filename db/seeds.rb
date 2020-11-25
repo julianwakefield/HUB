@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+# require 'faker'
 
-10.times do 
-    game = Game.create(
-        name: Faker::Game.title
-    ) 
-    game.save
-end
+# 10.times do 
+#     game = Game.create(
+#         name: Faker::Game.title
+#     ) 
+#     game.save
+# end
