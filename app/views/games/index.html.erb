@@ -1,47 +1,8 @@
 <h1>All Games</h1>
-<ul><% @games.each do |game| %>
-  <li>
-    <%= game.name %>
-    <% user_game =  current_user.user_games.find_by(game: game) %>
-    <% if user_game.nil?  %>
-      <%= link_to 'Like',  game_user_games_path(game), method: :post %>
-     <% else %>
-      <%= link_to 'Dislike', user_game_path(user_game), method: :delete %>
-    <% end %>
-  </li>
-<% end %>
-</ul>
--------------------------------------------------------------------------------------------------------------------------------------------------------
-<div class="container">
-  <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
-    </div>
-  </div>
-</div>
--------------------------------------------------------------------------------------------------------------------------------------------------------
-
-<h1>All Games</h1>
 <div class="container">
   <div class="cards">
     <% @games.each do |game| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
           <div class="new">
             <p><%= game.name %></p>
             <% user_game =  current_user.user_games.find_by(game: game) %>
@@ -54,4 +15,18 @@
         </div>
     <% end %>
   </div>
-<%# document.addEventListener('click' %>
+</div>
+
+<!-- <h1>All Games</h1>
+<ul><% @games.each do |game| %>
+  <li>
+    <%= game.name %>
+    <% user_game =  current_user.user_games.find_by(game: game) %>
+    <% if user_game.nil?  %>
+      <%= link_to 'Like',  game_user_games_path(game), method: :post %>
+     <% else %>
+      <%= link_to 'Dislike', user_game_path(user_game), method: :delete %>
+    <% end %>
+  </li>
+<% end %>
+</ul> -->
