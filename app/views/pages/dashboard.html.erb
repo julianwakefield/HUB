@@ -1,1 +1,15 @@
 test
+<div>
+    <h2>All Games</h1>
+    <ul><% @games.each do |game| %>
+    <li>
+        <%= game.name %>
+    </li>            
+            <%= simple_form_for([game,@post]) do |f| %>
+            <%= f.input :content %>
+            <%= f.input :image %>
+            <%= f.submit :submit  %>
+         <% end %>
+    <% end %>
+    </ul>
+</div>
