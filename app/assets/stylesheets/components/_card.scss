@@ -2,8 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  // height: 450px;
-  // width: 450px;
 }
 
 .card-category {
@@ -21,6 +19,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.new {
+  padding: 20px 50px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 15px;
+  p {
+  margin: 0;
+  }
+}
 // // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .cards {
