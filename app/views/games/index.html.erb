@@ -40,17 +40,18 @@
 <h1>All Games</h1>
 <div class="container">
   <div class="cards">
-    <ul><% @games.each do |game| %>
+    <% @games.each do |game| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= game.name %>
-          <% user_game =  current_user.user_games.find_by(game: game) %>
-          <% if user_game.nil?  %>
-            <%= link_to 'Like',  game_user_games_path(game), method: :post %>
-           <% else %>
-            <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
-          <% end %>
+          <div class="new">
+            <p><%= game.name %></p>
+            <% user_game =  current_user.user_games.find_by(game: game) %>
+            <% if user_game.nil?  %>
+              <%= link_to 'Like',  game_user_games_path(game), method: :post %>
+             <% else %>
+              <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+            <% end %>
+          </div>
         </div>
     <% end %>
-    </ul>
   </div>
 <%# document.addEventListener('click' %>
