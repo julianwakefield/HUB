@@ -1,5 +1,14 @@
-<h1>Hello</h1>
-<h2><%= @game.name  %> </h2>
-<p><% @game.posts.each do |post| %>
-<%= post.content %>
-<% end %>
+<div><h1>Hello</h1>
+    <div><h2><%= @game.name %> </h2>
+        <div>
+            <ul><% @game.posts.each do |post| %>
+                <li>
+                <%= post.content %>
+                </li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
