@@ -1,42 +1,36 @@
 <div class="topspace">
 
 <h1>All Games</h1>
+<div class="container">
+  <div class="cards">
+    <% @games.each do |game| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+          <div class="new">
+            <p><%= game.name %></p>
+            <% user_game =  current_user.user_games.find_by(game: game) %>
+            <% if user_game.nil?  %>
+              <%= link_to 'Like',  game_user_games_path(game), method: :post %>
+             <% else %>
+              <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- <h1>All Games</h1>
 <ul><% @games.each do |game| %>
   <li>
+    TODELETE
     <%= game.name %>
     <% user_game =  current_user.user_games.find_by(game: game) %>
     <% if user_game.nil?  %>
       <%= link_to 'Like',  game_user_games_path(game), method: :post %>
      <% else %>
-      <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+      <%= link_to 'Dislike', user_game_path(user_game), method: :delete %>
     <% end %>
-  </li> 
+  </li>
 <% end %>
-</ul>
 
-
-<%# document.addEventListener('click' %>
-
-
-function castParallax() {
-
-	var opThresh = 350;
-	var opFactor = 750;
-
-	window.addEventListener("scroll", function(event){
-
-		var top = this.pageYOffset;
-
-		var layers = document.getElementsByClassName("parallax");
-		var layer, speed, yPos;
-		for (var i = 0; i < layers.length; i++) {
-			layer = layers[i];
-			speed = layer.getAttribute('data-speed');
-			var yPos = -(top * speed / 100);
-			layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
-
-		}
-	});
-}
-
-document.body.onload = castParallax();
+</ul> -->
