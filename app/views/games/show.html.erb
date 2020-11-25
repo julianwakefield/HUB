@@ -1,8 +1,11 @@
+
 <div><h1>Hello</h1>
+  <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
     <div><h2><%= @game.name %> </h2>
         <div>
             <ul><% @game.posts.each do |post| %>
                 <li>
+                  <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
                 <%= post.content %>
                 </li>
             <% end %>
@@ -11,4 +14,3 @@
     </div>
 </div>
 
-        

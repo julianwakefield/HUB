@@ -2,6 +2,7 @@
 </div>
   <%= simple_form_for([@game, @post]) do |f| %>
     <%= f.input :content%>
+    <%= f.input :photo, as: :file %>
     <%= f.submit :submit  %>
   <% end %>
   <!-- <%= link_to "Back", game_path %> -->
