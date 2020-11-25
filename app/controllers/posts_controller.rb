@@ -7,15 +7,15 @@ class PostsController < ApplicationController
 
   def new
     @games = Games.find(params[:game_id])
-    @post = Post.new
+    @post = Post.new(post_params)
   end
 
   def create
-    @games = Game.find(params[:game_id])
+    @game = Game.find(params[:game_id])
     @post = Post.new(post_params)
     @post.game = @game
     @post.user = current_user
-    if @post.game.save!
+    if @post.save!
       redirect_to game_path(@game)
     else
       render :new
