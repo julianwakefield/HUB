@@ -5,4 +5,5 @@ class Game < ApplicationRecord
   has_many :comments, through: :posts
   # has_many :messages, :through => :chat
   has_one_attached :photo
+  belongs_to :user
 end
