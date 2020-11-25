@@ -16,6 +16,7 @@
                 <ul>
                   <li>
                     <%= comment.content %>
+                    <%= link_to 'Delete', comment_path(comment), method: :delete %>
                   </li>
                 </ul>
                 <% end %>
