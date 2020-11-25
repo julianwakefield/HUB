@@ -20,6 +20,7 @@
 <!-- <h1>All Games</h1>
 <ul><% @games.each do |game| %>
   <li>
+    TODELETE
     <%= game.name %>
     <% user_game =  current_user.user_games.find_by(game: game) %>
     <% if user_game.nil?  %>
