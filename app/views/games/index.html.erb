@@ -6,7 +6,7 @@
     <% if user_game.nil?  %>
       <%= link_to 'Like',  game_user_games_path(game), method: :post %>
      <% else %>
-      <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+      <%= link_to 'Dislike', user_game_path(user_game), method: :delete %>
     <% end %>
   </li>
 <% end %>

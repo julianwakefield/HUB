@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :games do
     resources :user_games, only: [:create]
     resources :posts, only: [:new, :create, :update, :edit] do
-     resources :comments, only: [:create, :update, :destroy]
+     resources :comments, only: [:new, :create, :update, :destroy]
     end
   end
 
