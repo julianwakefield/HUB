@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_161858) do
+ActiveRecord::Schema.define(version: 2020_11_25_111751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,15 +40,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "games_i_likes", force: :cascade do |t|
-    t.bigint "game_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_games_i_likes_on_game_id"
-    t.index ["user_id"], name: "index_games_i_likes_on_user_id"
-  end
-
   create_table "link_to_conversations", force: :cascade do |t|
     t.bigint "chat_id", null: false
     t.bigint "user_id", null: false
@@ -75,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
+    t.string "image"
     t.index ["game_id"], name: "index_posts_on_game_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -97,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -104,8 +97,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_161858) do
   add_foreign_key "chats", "games"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "games_i_likes", "games"
-  add_foreign_key "games_i_likes", "users"
   add_foreign_key "link_to_conversations", "chats"
   add_foreign_key "link_to_conversations", "users"
   add_foreign_key "messages", "chats"

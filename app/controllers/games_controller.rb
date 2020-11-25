@@ -33,7 +33,9 @@ class GamesController < ApplicationController
         @game.destroy
         redirect_to game_path(@game)
       end
+
       private
+      
       def game_params
         params.require(:game).permit(:name)
       end

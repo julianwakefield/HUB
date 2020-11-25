@@ -8,7 +8,7 @@
 
 require 'faker'
 
-10.times do 
+25.times do 
     game = Game.create(
         name: Faker::Game.title
     ) 
