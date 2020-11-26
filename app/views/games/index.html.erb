@@ -1,3 +1,4 @@
+
 <div class="topspace">
 
 <h1>All Games</h1>
@@ -5,6 +6,7 @@
   <div class="cards">
     <% @games.each do |game| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+          <%= link_to game_path(game) do %>
           <div class="new">
             <p><%= game.name %></p>
             <% user_game =  current_user.user_games.find_by(game: game) %>
@@ -14,12 +16,53 @@
               <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
             <% end %>
           </div>
+           <% end %>
         </div>
     <% end %>
   </div>
 </div>
 
-<!-- <h1>All Games</h1>
+
+<style>
+  .card_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 16px;
+  }
+</style>
+
+
+
+
+
+<% if false %>
+<div class="container">
+  <div class="card_container">
+
+    <% @games.each do |game| %>
+      <% user_game =  current_user.user_games.find_by(game: game)%>
+      <%= link_to game_path(game) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
+          <%= game.name %><br>
+
+
+        </div>
+      <% end %>
+
+    <% end %>
+
+</div>
+
+
+<% end %>
+
+
+
+
+
+
+<% if false %>
+<h1>All Games</h1>
 <ul><% @games.each do |game| %>
   <li>
     TODELETE
@@ -33,4 +76,5 @@
   </li>
 <% end %>
 
-</ul> -->
+</ul>
+<% end %>
