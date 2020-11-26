@@ -19,7 +19,7 @@
                             <% end %>
                           <%= post.content %>
                           <%= simple_form_for [@game,post,@comment] do |f| %>
-                            <%= f.input :content, class: 'input'%>
+                            <%= f.input :content, label: false %>
                             <%= f.submit :submit, class: 'modal-button' %>
                           <% end %>
                           </li>
