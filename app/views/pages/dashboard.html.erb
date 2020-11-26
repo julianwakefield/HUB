@@ -49,7 +49,7 @@
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <% @games.each_slice(4).to_a.each_with_index do |games, index| %>
+      <% @games.each_slice(5).to_a.each_with_index do |games, index| %>
       <div class="carousel-item <%= "active" if index ==0 %>">
         <div class="d-flex">
           <% games.each do |game| %>
@@ -69,5 +69,88 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+
+
+  <div class="exclusive-top">
+    <h3>HUB CLUB</h3>
+  </div>
+  <div class="exclusive-container-top">
+    <div class="exclusive-left-top">
+    <img src="https://media0.giphy.com/media/LCmDrFzxMU7zXpOMRe/giphy.gif" alt="">
+    </div>
+    <div class="exclusive-right-top">
+      <h4>WHAT IS THE HUB CLUB</h4>
+      <p>The club is a global community of passionate, active gamers with exclusive access to our</p>
+      <p>most sought after products, experiences and offers.</p>
+      <div class="club-spacer"></div>
+      <div class="club-container">
+        <div class="club-item">
+          <i class="fas fa-fist-raised"></i>
+          <p>PRIORITY AT</p> 
+          <p>HUB</p> 
+        </div>
+        <div class="club-item">
+          <i class="fas fa-tshirt"></i>
+          <p>MEMBER-ONLY</p> 
+          <p>PRODUCTS</p> 
+        </div>
+        <div class="club-item">
+          <i class="fas fa-hashtag"></i>
+          <p>SOCIAL NETWORK</p> 
+          <p>PERKS</p> 
+        </div>
+        <div class="club-item">
+          <i class="fas fa-gamepad"></i>
+          <p>ACCESS HUB</p> 
+          <p>EXCLUSIVES</p> 
+        </div>
+        <div class="club-item">
+          <i class="far fa-building"></i>
+          <p>MEETING PLACES</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="exclusive-container-bottom">
+    <div class="exclusive-left-bottom">
+   
+    </div>
+    <div class="exclusive-right-bottom">
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
