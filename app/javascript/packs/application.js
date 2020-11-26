@@ -25,15 +25,17 @@ require("channels")
 // External imports
 import "bootstrap";
 
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { castParallax } from '../components/castParallax';
+import { initChatCable } from "../channels/chat_channel";
 
 // import { background } from '../channels/background'
 document.addEventListener('turbolinks:load', () =>{
-	castParallax();
+	// castParallax();
+	initChatCable();
 });
+
 
 
 
@@ -70,30 +72,35 @@ scrollToTopButton.onclick = function(e) {
 ////////////////////////////////////////////////////
 const loginBtn = document.getElementById('login');
 const signupBtn = document.getElementById('signup');
+if (loginBtn){
 
-loginBtn.addEventListener('click', (e) => {
-	let parent = e.target.parentNode.parentNode;
-	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			signupBtn.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
+	loginBtn.addEventListener('click', (e) => {
+		let parent = e.target.parentNode.parentNode;
+		Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+			if(element !== "slide-up") {
+				parent.classList.add('slide-up')
+			}else{
+				signupBtn.parentNode.classList.add('slide-up')
+				parent.classList.remove('slide-up')
+			}
+		});
 	});
-});
+}
 
-signupBtn.addEventListener('click', (e) => {
-	let parent = e.target.parentNode;
-	Array.from(e.target.parentNode.classList).find((element) => {
-		if(element !== "slide-up") {
-			parent.classList.add('slide-up')
-		}else{
-			loginBtn.parentNode.parentNode.classList.add('slide-up')
-			parent.classList.remove('slide-up')
-		}
+if (signupBtn){
+
+	signupBtn.addEventListener('click', (e) => {
+		let parent = e.target.parentNode;
+		Array.from(e.target.parentNode.classList).find((element) => {
+			if(element !== "slide-up") {
+				parent.classList.add('slide-up')
+			}else{
+				loginBtn.parentNode.parentNode.classList.add('slide-up')
+				parent.classList.remove('slide-up')
+			}
+		});
 	});
-});
+}
 ////////////////////////////////////////////////////
 
 

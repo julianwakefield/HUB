@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create
     @chat = Chat.find(params[:chat_id])
@@ -6,9 +7,11 @@ class MessagesController < ApplicationController
     @message.chat = @chat
     @message.user = current_user
     if @message.save
+      ChatChannel.broadcast_to(@chat,
+      render_to_string(partial: "message", locals: { chat: @chat }))
       redirect_to game_path(@chat.game, anchor: "message-#{@message.id}")
     else
-      render "chats/show"
+      render "games/show"
     end
   end
 
