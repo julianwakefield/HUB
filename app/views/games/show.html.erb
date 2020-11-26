@@ -12,7 +12,7 @@
                   <% end %>
                 <%= post.content %>
                 <%= simple_form_for [@game,post,@comment] do |f| %>
-                  <%= f.input :content %>
+                  <%= f.input :content%>
                   <%= f.submit :submit  %>
                 <% end %>
                 </li>
@@ -30,3 +30,21 @@
     </div>
 </div>
 
+<h1>#<%= @game.chats.first.name %></h1>
+<div id="messages" data-chatroom-id="<%= @game.chats.first.id %>">
+  <% @game.chats.first.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <i class="author">
+        <span><%= message.user.email%></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.message %></p>
+    </div>
+  <% end %>
+
+  <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
+    <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
+    <%= f.submit %>
+  <% end %>
+  
+</div>
