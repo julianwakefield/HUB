@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @games = current_user.games
+    # @games = current_user.games
+    @games = Game.all
     @post = Post.new
     @comment = Comment.new
   end

@@ -17,21 +17,34 @@
 </div>
 
 <div class="display-favourites">
+
+
+
+        <div class="cards">
+        <% @games.each do |game| %>
+
+
+            <figure class="card">
+                <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+                <figcaption><%= game.name %></figcaption>
+             </figure>
+
+        </div>
+
+ 
     <div class="cards">
         <% @games.each do |game| %>
             <figure class="dashboard-card">
             <img src="<%= cl_image_path game.photo.key %>" />
             <%# <p class="img-description"><%= game.name %></p>
             </figure>
+
         <% end %>
     </div>
 </div>
 
 
-<div class="dashboard-spacer">
-<h2><strong>What's new?</strong></h2>
 </div>
-
 
 
 
@@ -76,4 +89,50 @@
 
     </div>
 
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% @games.each_slice(4).to_a.each_with_index do |games, index| %>
+    <div class="carousel-item <%= "active" if index ==0 %>">
+      <div class="d-flex">
+        <% games.each do |game| %>
+        <div style="flex: 1 1 0px">
+          <img class="d-block w-100 carousel-img-size" src="<%= cl_image_path game.photo.key %>" alt="Second slide">
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
