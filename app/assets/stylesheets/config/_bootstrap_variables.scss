@@ -26,20 +26,20 @@ $border-radius-sm: 2px;
 h1 {
   font-family: 'Whitney Bold';
   font-size: 54px;
-  color: white;
+  color: white!important;
 
 }
 
 h2{
   font-family: 'Whitney Semi Bold';
   font-size: 32px;
-  color: white;
+  color: white!important;
 }
 
 h3 {
   font-family: 'Whitney Medium';
   font-size: 24px;
-  color: white;
+  color: white!important;
 
 }
 
@@ -53,9 +53,9 @@ body {
 }
 
 p {
-  color: white;
+  color: white!important;
 }
 
 a {
-  color: white;
+  color: white!important;
 }
