@@ -1,111 +1,41 @@
-
+<div class="dashboardbody">
 
 <div class="dashboard-top">
     <div class="dashboard-top-invisible">
     </div>
     <div class="dashboard-top-text">
         <div class="dashboard-top-top">
-        <p>THE FUTURE OF GAMING</p>
+            <p>THE FUTURE OF GAMING</p>
         </div>
         <div class="dashboard-top-bottom">
-        <h3>Dashboard</h3>
+            <h3>Dashboard</h3>
         </div>
-
     </div>
     <div class="dashboard-top-search">
         <h4><i class="fas fa-search"></i></h4>
     </div>
 </div>
 
-
-
-
-<div class="wrapper">
-<h2><strong>All Games<span>( 5 )</span></strong></h2>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="display-favourites">
-<<<<<<< Updated upstream
-    <h2>My Favs</h1>
-    
-=======
-    <h2>My Favs</h2>
-    <% @games.each do |game| %>
->>>>>>> Stashed changes
-
-
-        <div class="cards">
+    <div class="cards">
         <% @games.each do |game| %>
-            
-
-            <figure class="card">
-                <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
-                <figcaption><%= game.name %></figcaption>
-             </figure>
-              
-        </div>
-<<<<<<< Updated upstream
+            <figure class="dashboard-card">
+            <img src="<%= cl_image_path game.photo.key %>" />
+            <%# <p class="img-description"><%= game.name %></p>
+            </figure>
         <% end %>
-=======
-    <% end %>
-
-</div>
->>>>>>> Stashed changes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-<div>
-    <h2>All Games</h2>
-    <ul><% @games.each do |game| %>
-    <li>
-        <%= game.name %>
-    </li>            
-            <%= simple_form_for([game,@post]) do |f| %>
-            <%= f.input :content%>
-             <%= f.input :photo, as: :file %>
-            <%= f.submit :submit  %>
-         <% end %>
-    <% end %>
-        </ul>
-
+    </div>
 </div>
 
-
-
-
-    
-
-
+<div class="dashboard-spacer">
 <h2><strong>What's new?</strong></h2>
+</div>
+
+
+
 
 <div class="news">
+
 
     <figure class="article">
 
@@ -142,5 +72,7 @@
         </figcaption>
 
     </figure>
+
+    </div>
 
 </div>
