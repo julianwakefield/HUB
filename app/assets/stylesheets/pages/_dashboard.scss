@@ -1,5 +1,7 @@
-body {
+.dashboardbody {
     color: white;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .dashboard-top {
@@ -8,6 +10,8 @@ body {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .dashboard-top-text {
@@ -17,7 +21,7 @@ body {
 }
 
 .display-favourites {
-    background-color: orange;
+    background-color: #202020;
 }
 
 
@@ -115,6 +119,8 @@ h2 {
 figure {
     background-color: transparent!important;
     margin: 30px;
+    height: 400px;
+
 }
 
 .cards {
@@ -122,8 +128,12 @@ figure {
     flex-flow: row wrap;
     }
 
-    .card{
+    }
+
+
+.dashboard-card{
         @extends .rel{
+        height: 300px;
         margin: 20px;
         width: 180px;
         height: 270px;
@@ -181,14 +191,24 @@ figure {
                 transform: rotate( 25deg );
                 top: -40%;
                 opacity: .15;
-            }}}}}}
+            }}}}}
 
+
+
+
+
+.dashboard-spacer {
+    background-color: #202020;
+    margin-bottom: -20px;
+}
 
 
             
 .news{
+    background-color: #202020;
     display: flex;
-@extends .cards{
+
+    @extends .cards{
 }}
 
 .article {
@@ -244,4 +264,14 @@ figure {
             transform: none;
         }
     }
+}
+
+
+figcaption {
+    position: relative;
+    top: -320px;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    opacity: 0;
 }
