@@ -3,12 +3,8 @@ html,.wrap {
   height:100%;
   margin:0;
   padding:0;
-  overflow:hidden;
 }
-body {
-  -webkit-filter: contrast(25);
-  filter: contrast(25);
-}
+
 .wrap {
   background: inherit;
   animation: 7s spin ease-in-out infinite;
@@ -22,8 +18,8 @@ body {
   height:100px;
   left:35%;
   top:35%;
-  margin:-50px;
-  background: black;
+  // margin:-50px;
+  background: white;
   border-radius:50%;
   -webkit-filter: blur(25px);
   filter: blur(25px);
@@ -74,7 +70,6 @@ body {
 
 .topspacehome {
     height: 100%;
-    background-color: #f6f4ef;
 }
 
 
@@ -95,9 +90,7 @@ body {
 }
 
 .home-logo img {
-	margin-left: -35px;
-	margin-bottom: -30px;
-	height: 130px;
+  height: 60px;
 }
 
 
@@ -110,7 +103,8 @@ body {
   }
   
   #toggle:checked ~ dialog {
-	display: block;
+  display: block;
+  background-color: grey;
   }
   
   label{
@@ -142,15 +136,15 @@ body {
   .popupbutton {
     background-color: transparent;
     margin-left: -13px;
-    color: black;
-	border: 2px solid black;
+    color: white;
+	border: 2px solid white;
 	border-radius: 0px;
 
 
   }
   .popupclose {
     background-color: transparent;
-    color: black;
-	border: 2px solid black;
+    color: white;
+	border: 2px solid white;
 	border-radius: 0px;
   }
