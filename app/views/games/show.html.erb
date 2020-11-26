@@ -4,6 +4,7 @@
 <div><h1>Hello</h1>
   <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
     <div><h2><%= @game.name %> </h2>
+
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
 
           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -42,3 +43,11 @@
             </div>
         </div>
 
+  <h1>#<%= @game.chats.first.name %></h1>
+  <%= render 'messages/message', chat: @game.chats.first  %>
+  <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
+    <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
+    <%= f.submit %>
+  <% end %>
+  
+</div>

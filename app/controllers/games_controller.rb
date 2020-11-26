@@ -12,6 +12,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @user = current_user
     if @game.save!
+      Chat.create!(game: @game, name: @game.name)
       redirect_to game_path(@game)
     else
       render :new
@@ -22,6 +23,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @posts = Post.where(game: @game).order(created_at: :desc)
     @comment = Comment.new
+    @message = Message.new
   end
 
   def edit

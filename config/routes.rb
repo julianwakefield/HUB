@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:destroy]
   resources :comments, only: [:destroy]
   resources :user_games, only: [:destroy]
+  resources :chats, only: [:show] do
+    resources :messages, only: [:create]
+  end
   resources :games do
     resources :user_games, only: [:create]
     resources :posts, only: [:new, :create, :update, :edit] do
