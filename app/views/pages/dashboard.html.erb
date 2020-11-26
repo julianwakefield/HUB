@@ -41,7 +41,7 @@
 <div class="display-favourites">
 <<<<<<< Updated upstream
     <h2>My Favs</h1>
-    
+
 =======
     <h2>My Favs</h2>
     <% @games.each do |game| %>
@@ -50,13 +50,13 @@
 
         <div class="cards">
         <% @games.each do |game| %>
-            
+
 
             <figure class="card">
                 <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
                 <figcaption><%= game.name %></figcaption>
              </figure>
-              
+
         </div>
 <<<<<<< Updated upstream
         <% end %>
@@ -80,13 +80,13 @@
 
 
 
-        
+
 <div>
     <h2>All Games</h2>
     <ul><% @games.each do |game| %>
     <li>
         <%= game.name %>
-    </li>            
+    </li>
             <%= simple_form_for([game,@post]) do |f| %>
             <%= f.input :content%>
              <%= f.input :photo, as: :file %>
@@ -100,7 +100,7 @@
 
 
 
-    
+
 
 
 <h2><strong>What's new?</strong></h2>
@@ -143,4 +143,50 @@
 
     </figure>
 
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% @games.each_slice(4).to_a.each_with_index do |games, index| %>
+    <div class="carousel-item <%= "active" if index ==0 %>">
+      <div class="d-flex">
+        <% games.each do |game| %>
+        <div style="flex: 1 1 0px">
+          <img class="d-block w-100 carousel-img-size" src="<%= cl_image_path game.photo.key %>" alt="Second slide">
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
