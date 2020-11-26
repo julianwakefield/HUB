@@ -35,9 +35,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @game = @comment.game
     @comment.destroy
-    redirect_to game_path(@game)
+    redirect_to game_path(@comment.post.game)
   end
 
   private
