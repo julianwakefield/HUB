@@ -1,44 +1,58 @@
 
 <div class="topspace">
 
-<div><h1>Hello</h1>
-  <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
-    <div><h2><%= @game.name %> </h2>
+<div class="show-container">
+
+  <div class="show-box-left"><h1>Hello</h1>
+    <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
+      <div>
+        <h2><%= @game.name %> </h2>
+      </div>
+       <%= simple_form_for([@game,@post]) do |f| %>
+                  <%= f.input :content, label: false  %>
+                  <%= f.input :photo, as: :file, label: false  %>
+                  <%= f.button :submit, "Create New Post"  %>
+          <% end %>
+  </div>
+
+              
+  <div class="show-box-right">    
+  <ul><% @posts.each do |post| %>
+      <li>
+          <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, height: 300, width: 40, crop: :fill %>
+          <% end %>
+        <%= post.content %>
+        
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
 
           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
-                
-                <div>
-                      <ul><% @posts.each do |post| %>
-                          <li>
-                            <% if post.photo.attached? %>
-                              <%= cl_image_tag post.photo.key, height: 300, width: 40, crop: :fill %>
-                            <% end %>
-                          <%= post.content %>
-                          <%= simple_form_for [@game,post,@comment] do |f| %>
-                            <%= f.input :content, label: false %>
-                            <%= f.submit :submit, class: 'modal-button' %>
-                          <% end %>
-                          </li>
-                          <% post.comments.each do |comment| %>
-                          <ul>
-                            <li>
-                              <%= comment.content %>
-                              <%= link_to 'Delete', comment_path(comment), method: :delete %>
-                            </li>
-                          </ul>
-                          <% end %>
-                      <% end %>
-                      </ul>
-                  </div>
 
-
-                  </div>
+        <%= post.content %>
+        <% post.comments.each do |comment| %>
+      <ul>
+          <li>
+            <%= comment.content %>
+            <%= link_to 'Delete', comment_path(comment), method: :delete %>
+          </li>
+      </ul>
+          <% end %>
+              <%= simple_form_for [@game,post,@comment] do |f| %>
+                <%= f.input :content, label: false %>
+                <%= f.submit :comment, class: 'modal-button' %>
+              <% end %>
+          </li>
+        <% end %>
+       </ul>       
+  </div>
+</div>
+  </div>
                 </div>
               </div>
+
                       
             </div>
         </div>
