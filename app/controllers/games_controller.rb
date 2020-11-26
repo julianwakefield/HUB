@@ -24,6 +24,8 @@ class GamesController < ApplicationController
     @posts = Post.where(game: @game).order(created_at: :desc)
     @comment = Comment.new
     @message = Message.new
+    @post = Post.new
+  
   end
 
   def edit
