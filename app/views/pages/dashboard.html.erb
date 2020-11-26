@@ -1,4 +1,48 @@
-<div class="topspace">
+
+
+<div class="dashboard-top">
+    <div class="dashboard-top-invisible">
+    </div>
+    <div class="dashboard-top-text">
+        <div class="dashboard-top-top">
+        <p>THE FUTURE OF GAMING</p>
+        </div>
+        <div class="dashboard-top-bottom">
+        <h3>Dashboard</h3>
+        </div>
+
+    </div>
+    <div class="dashboard-top-search">
+        <h4><i class="fas fa-search"></i></h4>
+    </div>
+</div>
+
+
+
+
+<div class="wrapper">
+<h2><strong>All Games<span>( 5 )</span></strong></h2>
+
+
+
+<div class="display-favourites">
+    <h2>My Favs</h1>
+    
+
+
+        <div class="cards">
+        <% @games.each do |game| %>
+            
+
+            <figure class="card">
+                <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
+                <figcaption><%= game.name %></figcaption>
+             </figure>
+              
+        </div>
+        <% end %>
+
+
 
 test
 <div>
@@ -13,5 +57,54 @@ test
             <%= f.submit :submit  %>
          <% end %>
     <% end %>
-    </ul>
 </div>
+
+
+
+
+    
+
+
+	<h2><strong>What's new?</strong></h2>
+
+	<div class="news">
+
+		<figure class="article">
+
+			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
+
+			<figcaption>
+
+				<h3>New Item</h3>
+
+				<p>
+
+					In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+		<figure class="article">
+
+			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
+
+			<figcaption>
+
+				<h3>Update</h3>
+
+				<p>
+
+					Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+	</div>
+
+
