@@ -25,9 +25,27 @@
 
 
 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="display-favourites">
+<<<<<<< Updated upstream
     <h2>My Favs</h1>
     
+=======
+    <h2>My Favs</h2>
+    <% @games.each do |game| %>
+>>>>>>> Stashed changes
 
 
         <div class="cards">
@@ -40,13 +58,31 @@
              </figure>
               
         </div>
+<<<<<<< Updated upstream
         <% end %>
+=======
+    <% end %>
+
+</div>
+>>>>>>> Stashed changes
 
 
 
-test
+
+
+
+
+
+
+
+
+
+
+
+
+        
 <div>
-    <h2>All Games</h1>
+    <h2>All Games</h2>
     <ul><% @games.each do |game| %>
     <li>
         <%= game.name %>
@@ -57,6 +93,8 @@ test
             <%= f.submit :submit  %>
          <% end %>
     <% end %>
+        </ul>
+
 </div>
 
 
@@ -65,46 +103,44 @@ test
     
 
 
-	<h2><strong>What's new?</strong></h2>
+<h2><strong>What's new?</strong></h2>
 
-	<div class="news">
+<div class="news">
 
-		<figure class="article">
+    <figure class="article">
 
-			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
 
-			<figcaption>
+        <figcaption>
 
-				<h3>New Item</h3>
+            <h3>New Item</h3>
 
-				<p>
+            <p>
 
-					In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+                In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
 
-				</p>
+            </p>
 
-			</figcaption>
+        </figcaption>
 
-		</figure>
+    </figure>
 
-		<figure class="article">
+    <figure class="article">
 
-			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
+        <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
 
-			<figcaption>
+        <figcaption>
 
-				<h3>Update</h3>
+            <h3>Update</h3>
 
-				<p>
+            <p>
 
-					Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
+                Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
 
-				</p>
+            </p>
 
-			</figcaption>
+        </figcaption>
 
-		</figure>
+    </figure>
 
-	</div>
-
-
+</div>
