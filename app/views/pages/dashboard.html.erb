@@ -27,18 +27,20 @@
 
 <div class="display-favourites">
     <h2>My Favs</h1>
-    <% @games.each do |game| %>
+    
 
 
         <div class="cards">
-
+        <% @games.each do |game| %>
             
 
             <figure class="card">
                 <img src="https://mrreiha.keybase.pub/codepen/hover-fx/4.jpg" />
                 <figcaption><%= game.name %></figcaption>
              </figure>
+              
         </div>
+        <% end %>
 
 
 
