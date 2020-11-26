@@ -20,6 +20,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @posts = Post.where(game: @game).order(created_at: :desc)
     @comment = Comment.new
   end
 
