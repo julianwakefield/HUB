@@ -5,18 +5,20 @@
 }
 
 .card-category {
+  width: 100%;
+  min-height: 100%;
+  height: 300px;
+  object-fit: cover;
   background-size: cover;
   background-position: center;
-  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 a:hover {
@@ -24,14 +26,37 @@ a:hover {
 }
 
 .new {
-  padding: 20px 50px;
   text-align: center;
   margin: 0 auto;
   font-size: 15px;
+  bottom: -124px;
+  position: relative;
   p {
   margin: 0;
   }
 }
+
+.index-text {
+  text-align: center;
+  background-color: #2a2a2a;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 24px;
+  margin-bottom: 0px !important;
+}
+
+#index-all {
+  background-color: #202020;
+    margin-top: -10px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 50%;
+
+}
+
+
+
+
 // // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .cards {
