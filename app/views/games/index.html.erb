@@ -1,8 +1,9 @@
 
 <div class="topspace">
-
-<h1>All Games</h1>
-<div class="container">
+<div class="index-text">
+  <h1>Browse all games</h1>
+</div>
+<div class="container" id="index-all">
   <div class="cards">
     <% @games.each do |game| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path game.photo.key %>)">
