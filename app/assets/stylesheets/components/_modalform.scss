@@ -27,15 +27,14 @@
 	a {
 		color: blue !important;
 	}
-
-	li {
-		list-style-type: none;
-	}
-	
-
 }
 
 .modal.show .modal-dialog {
     transform: none;
     margin-top: 200px;
+}
+
+li {
+	color: white !important;
+	list-style-type: none;
 }
