@@ -18,6 +18,15 @@
     .form-control {
     background-color: grey;
     border: 0px;
+    
+    }
+    .form-control-file {
+      display: block;
+      width: 100%;
+      background-color: grey;
+    }
+    #post_photo button {
+      background-color: red;
     }
 
   }
@@ -84,3 +93,4 @@
   }
 
 }
+
