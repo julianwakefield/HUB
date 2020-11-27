@@ -29,8 +29,10 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { castParallax } from '../components/castParallax';
 import { initChatCable } from "../channels/chat_channel";
+
 // import { carouseltest1 } from "../components/function"; this is not used
 // import { carouseltest2 } from "../components/function"; this is not used
+
 
 // import { background } from '../channels/background'
 document.addEventListener('turbolinks:load', () =>{

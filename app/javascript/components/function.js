@@ -1,4 +1,4 @@
-(function carouseltest1(){
+(function (){
   // setup your carousels as you normally would using JS
   // or via data attributes according to the documentation
   // https://getbootstrap.com/javascript/#carousel
@@ -26,5 +26,5 @@
   });
 }());
 
-document.body.onload = carouseltest1();
-document.body.onload = carouseltest2();
+// document.body.onload = ();
+// document.body.onload = carouseltest2();
