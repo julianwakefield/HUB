@@ -1,7 +1,9 @@
 
 <div class="topspace">
 
-
+<div class="top-show">
+    <h3><%= @game.name %> </h3>
+  </div>
 <div class="show-top">
   <div class="video-responsive">
     <iframe src="https://www.youtube.com/embed/LembwKDo1Dk?modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&disablekb=1" width="1400" height="730" frameborder="0"></iframe>
@@ -79,7 +81,11 @@
     <% end %>
   </div>
 
-    
+
+
+<%= link_to 'Go back to games',  games_path %>
+
+
 </div>
 
 
