@@ -1,8 +1,7 @@
 .show-top {
-  background-color: green;
+  background-color: #202020;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 26px;
 }
 
 .show-container {
@@ -14,8 +13,12 @@
   }
   .show-box-left {
     width:30%;
-    background-color: red;
+    background-color: #202020;
     padding: 26px;
+    .form-control {
+    background-color: grey;
+    border: 0px;
+    }
 
   }
   .show-box-right {
@@ -54,4 +57,30 @@
 .show-forum {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.top-show {
+  margin-top: 24px;
+  margin-left: 10%;  
+  margin-right: 10%;
+
+
+  height: 48px;
+  background-color: #2a2a2a;
+  text-align: center;
+  padding-top: 8px;
+  h3 {
+      font-weight: bolder;
+  }
+}
+
+.game-summary {
+  padding-top: 8px;
+  background-color: #2a2a2a;
+  padding-left: 8px;
+  padding-right: 8px;
+  p {
+    color: grey !important;
+  }
+
 }
