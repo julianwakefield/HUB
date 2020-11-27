@@ -1,11 +1,25 @@
 
 <div class="topspace">
 
+
+<div class="show-top">
+  <div class="video-responsive">
+    <iframe src="https://www.youtube.com/embed/LembwKDo1Dk?modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&disablekb=1" width="1400" height="730" frameborder="0"></iframe>
+  </div>
+</div>
+
+
+
+
+
+
 <div class="show-container">
 
-  <div class="show-box-left"><h1>Hello</h1>
-    <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
-      <div>
+  <div class="show-box-left"><h1></h1>
+    <div class="show-photo">
+      <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div>
         <h2><%= @game.name %> </h2>
       </div>
        <%= simple_form_for([@game,@post]) do |f| %>
@@ -17,6 +31,7 @@
 
               
   <div class="show-box-right">    
+ 
   <ul><% @posts.each do |post| %>
       <li>
           <% if post.photo.attached? %>
@@ -65,3 +80,7 @@
   <% end %>
   
 </div>
+
+
+
+

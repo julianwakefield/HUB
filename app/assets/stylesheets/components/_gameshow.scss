@@ -1,11 +1,52 @@
+.show-top {
+  background-color: green;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 26px;
+}
+
 .show-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
   }
   .show-box-left {
     width:30%;
+    background-color: red;
+    padding: 26px;
+
   }
   .show-box-right {
     width:70%;
+    background-color: blue;
+    padding: 26px;
+
   }
+
+  .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+}
+
+.show-photo {
+  img {
+  width: 100%;
+  object-fit: cover;
+  }
+}
