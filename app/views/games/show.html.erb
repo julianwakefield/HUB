@@ -43,7 +43,7 @@
       <% if post.photo.attached? %>
       <%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %>
       <% end %>
-     <%= post.content %>
+     <h5><%= post.content %></h5>
       <% post.comments.each do |comment| %>
        <p class="comments"> <%= comment.content %> 
        <br><%= link_to 'Delete'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
@@ -52,12 +52,12 @@
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <%= post.content %>
+           <h5><%= post.content %></h5>
               <% post.comments.each do |comment| %>
                 <ul>
                   <li>
-                    <%= comment.content %>
-                    <%= link_to 'Delete', comment_path(comment), method: :delete %>
+                    <div class="posts-modal-box"><p class="modal-content"><%= comment.content %></p></div>
+                    <div><p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p></div>
                   </li>
                 </ul>
                     <% end %>

@@ -43,3 +43,25 @@
   
 }
 
+.delete-button-modal {
+  background-color: transparent;
+  // color: black !important;
+  font-family: 'Whitney Medium';
+  font-size: 14px;
+  font-weight: bold;
+  // border-radius: 4px;
+  // padding: 5px 5px;
+  border-top: 2px solid #574a4a;
+  border-bottom: 2px solid #574a4a;
+  margin: 15px auto; 
+	padding: 10px 40px;
+	cursor: pointer;
+	opacity: 1;
+	visibility: visible;
+  
+}
+
+.delete-button-modal:hover {
+  background-color: black;
+  
+}
