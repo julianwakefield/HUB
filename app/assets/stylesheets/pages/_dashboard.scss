@@ -4,6 +4,18 @@
     padding-right: 5%;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .dashboard-top {
     display: flex;
     justify-content: space-between;
@@ -25,7 +37,10 @@
 }
 
 
-
+.club {
+    margin-top: 16px;
+    background-color: #fa3c6e;
+}
 
 
 
@@ -181,7 +196,7 @@ figure {
         }
         // :focus and :active just added for a some android versions to simulate hover effect
         &:hover, &:focus, &:active {
-            box-shadow: 0 8px 16px 3px rgba( #000, .6 );
+            box-shadow: 0 8px 16px 3px rgba( #000, .8 );
             transform: translateY( -3px ) scale( 1.05 ) rotateX( 15deg );
         
             figcaption{
@@ -223,8 +238,10 @@ figure {
 
     img {
         width: 100%;
-        min-height: 100%;
-        transition: .2s;
+    min-height: 100%;
+    transition: .2s;
+    object-fit: cover;
+    height: 540px;
 
     }
     figcaption {

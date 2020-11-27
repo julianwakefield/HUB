@@ -1,20 +1,26 @@
+
+
+
 <div class="dashboardbody">
+
+
 
   <div class="dashboard-top">
     <div class="dashboard-top-invisible"></div>
       <div class="dashboard-top-text">
         <div class="dashboard-top-top">
-            <p>THE FUTURE OF GAMING</p>
         </div>
         <div class="dashboard-top-bottom">
-            <h3>Dashboard</h3>
+            <h2>Dashboard</h2>
         </div>
       </div>
       <div class="dashboard-top-search">
         <h4><i class="fas fa-search"></i></h4>
       </div>
   </div>
-
+  <div class="exclusive-top">
+    <h3>Recently Played</h3>
+  </div>
   <div class="display-favourites">
     <div class="cards">
       <% @games.each do |game| %>
@@ -26,22 +32,26 @@
     </div>
   </div>
 
+  <div class="exclusive-top">
+    <h3>News</h3>
+  </div>
+
   <div class="news">
     <figure class="article">
-      <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
+      <img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201028144137/cyberpunk-2077-is-delayed-again-to-december-1600x900.jpg" />
         <figcaption>
-          <h3>New Item</h3>
+          <h3>NIGHT CITY CHANGES EVERY BODY</h3>
           <p>
-            In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+            Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.        </p>
           </p>
         </figcaption>
     </figure>
     <figure class="article">
-     <img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
+     <img src="https://www.busstheworld.com/wp-content/uploads/2020/09/GeForce-RTX-3080.png" />
       <figcaption>
-        <h3>Update</h3>
+        <h3>Nvidia RTX 3080 wins Best Gaming Hardware</h3>
         <p>
-          Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
+          The NVIDIA GeForce RTX 3080 has been voted the Best Gaming Hardware at this year's Golden Joystick Awards. The win marks back-to-back victories for NVIDIA, which also claimed the title in 2019 for its 20-series graphics cards.
         </p>
       </figcaption>
     </figure>
@@ -72,7 +82,7 @@
 
 
   <div class="exclusive-top">
-    <h3>HUB CLUB</h3>
+    <h3>Hub Club</h3>
   </div>
   <div class="exclusive-container-top">
     <div class="exclusive-left-top">
@@ -82,6 +92,8 @@
       <h4>WHAT IS THE HUB CLUB</h4>
       <p>The club is a global community of passionate, active gamers with exclusive access to our</p>
       <p>most sought after products, experiences and offers.</p>
+      <button type="button" class="btn btn-secondary club">Learn More</button>
+
       <div class="club-spacer"></div>
       <div class="club-container">
         <div class="club-item">
