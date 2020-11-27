@@ -6,12 +6,13 @@ class UserGamesController < ApplicationController
     @user_game.game = @game
     @user_game.user = current_user
     @user_game.save
-    redirect_to games_path
+
+    redirect_back fallback_location: "/games"
   end
 
   def destroy
     @user_game = UserGame.find(params[:id])
     @user_game.destroy
-    redirect_to games_path
+    redirect_back fallback_location: "/games"
   end
 end

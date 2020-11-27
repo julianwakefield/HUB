@@ -23,7 +23,7 @@
   </div>
   <div class="display-favourites">
     <div class="cards">
-      <% @games.each do |game| %>
+      <% current_user.games.each do |game| %>
         <figure class="dashboard-card">
         <img src="<%= cl_image_path game.photo.key %>" />
         <%# <p class="img-description"><%= game.name %></p>
