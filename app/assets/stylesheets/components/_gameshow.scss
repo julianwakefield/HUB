@@ -34,7 +34,10 @@
     width:70%;
     background-color: #333b3f;
     padding: 26px;
-
+    ul li .btn {
+      background-color: grey;
+      border-color: grey;
+    }
   }
 
   .video-responsive{
