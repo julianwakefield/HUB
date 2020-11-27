@@ -12,9 +12,13 @@
             <p><%= game.name %></p>
             <% user_game =  current_user.user_games.find_by(game: game) %>
               <% if user_game.nil?  %>
-                <%= link_to 'Like',  game_user_games_path(game), method: :post %>
+                <%= link_to game_user_games_path(game), method: :post do %>
+                  <i class="far fa-thumbs-up"></i>
+                <% end %>
               <% else %>
-                <%= link_to 'Remove like', user_game_path(user_game), method: :delete %>
+                <%= link_to user_game_path(user_game), method: :delete do %>
+                  <i class="far fa-thumbs-down"></i>
+                <% end %>
               <% end %>
             </div>
            <% end %>
