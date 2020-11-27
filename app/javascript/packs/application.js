@@ -29,7 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { castParallax } from '../components/castParallax';
 import { initChatCable } from "../channels/chat_channel";
-import { carouseltest1 } from "../components/function";
+// import {  } from "../components/function";
 import { carouseltest2 } from "../components/function";
 
 // import { background } from '../channels/background'
