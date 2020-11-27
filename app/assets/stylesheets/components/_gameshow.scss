@@ -60,6 +60,7 @@
   img {
   width: 100%;
   object-fit: cover;
+  margin-bottom: 8px;
   }
 }
 
@@ -94,3 +95,10 @@
 
 }
 
+#message-2 {
+  color: white !important;
+}
+
+.chat-box {
+  width: 50%;
+}

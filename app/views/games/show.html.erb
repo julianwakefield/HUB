@@ -76,11 +76,13 @@
 </div>
 </div>
   <div class="show-forum">
-    <h1><%= @game.chats.first.name %></h1>
+    <h1 class="white-name"><%= @game.chats.first.name %></h1>
     <%= render 'messages/message', chat: @game.chats.first  %>
-    <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
-      <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
-      <%= f.submit %>
+    <div class="chat-box">
+      <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
+        <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
+        <%= f.submit %>
+    </div>
     <% end %>
   </div>
 <%= link_to 'Go back to games',  games_path %>
