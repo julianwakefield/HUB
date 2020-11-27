@@ -23,11 +23,13 @@
   </div>
   <div class="display-favourites">
     <div class="cards">
-      <% @games.each do |game| %>
-        <figure class="dashboard-card">
-        <img src="<%= cl_image_path game.photo.key %>" />
-        <%# <p class="img-description"><%= game.name %></p>
-        </figure>
+      <% current_user.games.each do |game| %>
+        <%= link_to game_path(game) do %>
+          <figure class="dashboard-card">
+          <img src="<%= cl_image_path game.photo.key %>">
+          <%# <p class="img-description"><%= game.name %></p>
+          </figure>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -38,7 +40,7 @@
 
   <div class="news">
     <figure class="article">
-      <img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201028144137/cyberpunk-2077-is-delayed-again-to-december-1600x900.jpg" />
+      <a href="games/1"><img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201028144137/cyberpunk-2077-is-delayed-again-to-december-1600x900.jpg" /></a>
         <figcaption>
           <h3>NIGHT CITY CHANGES EVERY BODY</h3>
           <p>
@@ -98,23 +100,23 @@
       <div class="club-container">
         <div class="club-item">
           <i class="fas fa-fist-raised"></i>
-          <p>PRIORITY AT</p> 
-          <p>HUB</p> 
+          <p>PRIORITY AT</p>
+          <p>HUB</p>
         </div>
         <div class="club-item">
           <i class="fas fa-tshirt"></i>
-          <p>MEMBER-ONLY</p> 
-          <p>PRODUCTS</p> 
+          <p>MEMBER-ONLY</p>
+          <p>PRODUCTS</p>
         </div>
         <div class="club-item">
           <i class="fas fa-hashtag"></i>
-          <p>SOCIAL NETWORK</p> 
-          <p>PERKS</p> 
+          <p>SOCIAL NETWORK</p>
+          <p>PERKS</p>
         </div>
         <div class="club-item">
           <i class="fas fa-gamepad"></i>
-          <p>ACCESS HUB</p> 
-          <p>EXCLUSIVES</p> 
+          <p>ACCESS HUB</p>
+          <p>EXCLUSIVES</p>
         </div>
         <div class="club-item">
           <i class="far fa-building"></i>
@@ -128,7 +130,7 @@
 
   <div class="exclusive-container-bottom">
     <div class="exclusive-left-bottom">
-   
+
     </div>
     <div class="exclusive-right-bottom">
     </div>

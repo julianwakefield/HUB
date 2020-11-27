@@ -5,15 +5,16 @@
   </div>
 <div class="show-top">
   <div class="video-responsive">
-    <iframe src="https://www.youtube.com/embed/LembwKDo1Dk?modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&disablekb=1" width="1400" height="730" frameborder="0"></iframe>
-  </div>
+    <iframe src="https://www.youtube.com/embed/LembwKDo1Dk?vq=hd1080&autoplay=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&disablekb=1" width="1000" height="630" frameborder="0"></iframe>  </div>
 </div>
 
 <div class="show-container">
   <div class="show-box-left"><h1></h1>
       <div class="show-photo">
       <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
-       </div>
+
+      </div>
+
 
        <%= simple_form_for([@game,@post]) do |f| %>
                   <%= f.input :content, label: false  %>
@@ -27,7 +28,9 @@
                 <%= link_to 'Remove Like', user_game_path(user_game), method: :delete %>
               <% end %>
                <%= link_to 'delete game', game_path(@game), method: :delete %>
+
   </div>
+
 <div class="show-box-right">    
   <ul><% @posts.each do |post| %>
     <li>
