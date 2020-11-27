@@ -24,27 +24,27 @@ $border-radius-sm: 2px;
 
 // Override other variables below!
 h1 {
-  font-family: 'Whitney Bold', "Arial", sans-serif;
+  font-family: 'Whitney Bold', "Arial Black", sans-serif;
   font-size: 54px;
   color: white!important;
 
 }
 
 h2{
-  font-family: 'Whitney Semi Bold', "Arial", sans-serif;
+  font-family: 'Whitney Semi Bold', "Arial Black", sans-serif;
   font-size: 32px;
   color: white!important;
 }
 
 h3 {
-  font-family: 'Whitney Medium', "Arial", sans-serif;
+  font-family: 'Whitney Medium', "Trebuchet MS", sans-serif;
   font-size: 24px;
   color: white!important;
 
 }
 
 body {
-  font-family: 'Whitney Semi Bold', "Arial", sans-serif;
+  font-family: 'Whitney Semi Bold', "Trebuchet MS", sans-serif;
   font-size: 16px;
   background-color: #121212!important;
   scroll-behavior: smooth;
@@ -53,9 +53,12 @@ body {
 }
 
 p {
+  font-family: 'Whitney Semi Bold', "Trebuchet MS", sans-serif;
   color: white!important;
 }
 
 a {
   color: white!important;
+  font-family: 'Whitney Semi Bold', "Trebuchet MS", sans-serif;
+
 }
