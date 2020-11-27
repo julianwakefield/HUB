@@ -32,3 +32,11 @@
   color: grey!important;
   font-weight: bold;
 }
+
+.navbar-expand-sm .navbar-nav .dropdown-menu {
+  background-color: grey;
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: black !important;
+
+  }
+}
