@@ -1,6 +1,5 @@
 
 <div class="topspace">
-
 <div class="top-show">
     <h3><%= @game.name %> </h3>
   </div>
@@ -10,11 +9,12 @@
 </div>
 
 <div class="show-container">
-
   <div class="show-box-left"><h1></h1>
       <div class="show-photo">
       <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
+
       </div>
+
 
        <%= simple_form_for([@game,@post]) do |f| %>
                   <%= f.input :content, label: false  %>
@@ -31,9 +31,7 @@
 
   </div>
 
-
 <div class="show-box-right">    
-
   <ul><% @posts.each do |post| %>
     <li>
       <% if post.photo.attached? %>
@@ -42,16 +40,12 @@
      <%= post.content %>
       <% post.comments.each do |comment| %>
        <p class="comments"> <%= comment.content %> 
-       <%= link_to 'Delete', comment_path(comment), method: :delete %></p>
+       <br><%= link_to 'Delete'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
       <% end %> 
-
-
      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
-
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-
             <%= post.content %>
               <% post.comments.each do |comment| %>
                 <ul>
@@ -73,10 +67,8 @@
       </div>
     </div>
   </div>
-
 </div>
 </div>
-
   <div class="show-forum">
     <h1><%= @game.chats.first.name %></h1>
     <%= render 'messages/message', chat: @game.chats.first  %>
@@ -85,14 +77,5 @@
       <%= f.submit %>
     <% end %>
   </div>
-
-
-
 <%= link_to 'Go back to games',  games_path %>
-
-
 </div>
-
-
-
-

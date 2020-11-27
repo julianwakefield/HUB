@@ -13,3 +13,33 @@
   color: white;
   text-decoration: none;
 }
+
+
+  // background: red;
+  // border-color: red;
+  // border: 2px;
+  // color: white;
+  // font-family: 'Whitney Medium';
+  // font-size: 10px;
+  // border-radius: 4px;
+  // padding: 4px 4px;
+  // text-decoration: none;
+
+
+
+.delete-button {
+  background-color: transparent;
+  color: black;
+  font-family: 'Whitney Medium';
+  font-size: 11px;
+  // border-radius: 4px;
+  padding: 5px 5px;
+  border-top: 2px solid #574a4a;
+  border-bottom: 2px solid #574a4a;
+}
+
+.delete-button:hover {
+  background-color: black;
+  
+}
+
