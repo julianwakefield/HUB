@@ -19,15 +19,21 @@
        <%= simple_form_for([@game,@post]) do |f| %>
                   <%= f.input :content, label: false  %>
                   <%= f.input :photo, as: :file, label: false  %>
-                  <%= f.button :submit, "Create New Post" %>
+                  <%= f.button :submit, "Create New Post", class: "create-post-button " %>
           <% end %>
           <% user_game =  current_user.user_games.find_by(game: @game) %>
               <% if user_game.nil?  %>
-                <%= link_to 'Like',  game_user_games_path(@game), method: :post %>
+                <%= link_to  game_user_games_path(@game), method: :post do %>
+                <i class="far fa-thumbs-up"></i>
+                <% end %>
               <% else %>
-                <%= link_to 'Remove Like', user_game_path(user_game), method: :delete %>
+                <%= link_to user_game_path(user_game), method: :delete do %>
+                <i class="far fa-thumbs-down"></i>
+                <% end %>
               <% end %>
-               <%= link_to 'delete game', game_path(@game), method: :delete %>
+               <%= link_to game_path(@game), method: :delete do %>
+               <i class="fas fa-gamepad"></i>
+               <% end %>
 
   </div>
 

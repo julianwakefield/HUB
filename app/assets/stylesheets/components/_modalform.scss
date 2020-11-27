@@ -21,6 +21,29 @@
     }
 }
 
+.test {
+	background-color: rgba(0,0,0,0.4);
+	color: rgba(256,256,256,0.7);
+	border: 0;
+	border-radius: 15px;
+	display: block;
+	margin: 15px auto; 
+	padding: 10px 40px;
+	font-size: 13px;
+	font-weight: bold;
+	cursor: pointer;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: all .3s ease;
+	text-align: center;
+	
+	&:hover {
+		transition: all .3s ease;
+		background-color: rgba(0,0,0,0.8);
+		color: white;
+    }
+}
+
 .modal-content {
 	color: black !important;
 	
