@@ -6,12 +6,11 @@
 
 
   <div class="dashboard-top">
-    <div class="dashboard-top-invisible"></div>
       <div class="dashboard-top-text">
         <div class="dashboard-top-top">
         </div>
         <div class="dashboard-top-bottom">
-            <h2>Dashboard</h2>
+            <h4>Dashboard</h4>
         </div>
       </div>
       <div class="dashboard-top-search">
@@ -19,8 +18,8 @@
       </div>
   </div>
   <div class="other-top">
-    <h3>Your Favourites</h3>
-  </div>
+    <div class="other-top-left"><p>Favourites<p></div>
+    <a class="other-top-right" id="" role="link" href="/games">View More</a>  </div>
   <div class="display-favourites">
     <div class="cards">
       <% current_user.games.each do |game| %>
@@ -35,29 +34,117 @@
   </div>
 
   <div class="other-top">
-    <h3>News</h3>
+    <p>News</p>
   </div>
 
   <div class="news">
-    <figure class="article">
+    <figure class="article1">
       <a href="games/2"><img src="https://image-cdn.essentiallysports.com/wp-content/uploads/20201028144137/cyberpunk-2077-is-delayed-again-to-december-1600x900.jpg" /></a>
         <figcaption>
-          <h3>NIGHT CITY CHANGES EVERY BODY</h3>
+          <h4>NIGHT CITY CHANGES EVERY BODY</h4>
           <p>
             Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality. You can customize your character’s cyberware, skillset and playstyle, and explore a vast city where the choices you make shape the story and the world around you.        </p>
           </p>
         </figcaption>
     </figure>
-    <figure class="article">
+    <figure class="article2">
      <img src="https://www.busstheworld.com/wp-content/uploads/2020/09/GeForce-RTX-3080.png" />
       <figcaption>
-        <h3>Nvidia RTX 3080 wins Best Gaming Hardware</h3>
+        <h4>Nvidia RTX 3080 wins Best Gaming Hardware</h4>
         <p>
           The NVIDIA GeForce RTX 3080 has been voted the Best Gaming Hardware at this year's Golden Joystick Awards. The win marks back-to-back victories for NVIDIA, which also claimed the title in 2019 for its 20-series graphics cards.
         </p>
       </figcaption>
     </figure>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="news-cards">
+    <div class="news-card content">
+      <div class="news-card-content">
+        <div class="news-card-img">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Gamer">
+        </div>
+        <div class="news-card-label">E-Sports</div>
+        <div class="news-card-title">
+          Fnatic raises $19 million, shakes up leadership team
+        </div>
+      </div>
+    </div>
+    <div class="news-card content">
+      <div class="news-card-content">
+        <div class="news-card-img">
+          <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="keyboard">
+        </div>
+        <div class="news-card-label">
+          Technology
+        </div>
+        <div class="news-card-title">
+          Google Stadia: The Future of Gaming
+        </div>
+      </div>
+    </div>
+    <div class="news-card content">
+      <div class="news-card-content">
+        <div class="news-card-img">
+          <img src="https://images.unsplash.com/photo-1519326844852-704caea5679e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2034&q=80" alt="Controller">
+        </div>
+        <div class="news-card-label">
+          Consoles
+        </div>
+        <div class="news-card-title">
+          PS5 won't launch before mid-2020
+        </div>
+      </div>
+    </div>
+    <div class="news-card form">
+      <div class="form-title">Sign Up</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -85,19 +172,14 @@
 
 
   <div class="exclusive-top">
-    <h3>Hub Club</h3>
+    <h4>Hub Club</h4>
   </div>
   <div class="exclusive-container-top">
     <div class="exclusive-left-top">
     <img src="https://media0.giphy.com/media/LCmDrFzxMU7zXpOMRe/giphy.gif" alt="">
     </div>
     <div class="exclusive-right-top">
-      <h4>WHAT IS THE HUB CLUB</h4>
-      <p>The club is a global community of passionate, active gamers with exclusive access to our</p>
-      <p>most sought after products, experiences and offers.</p>
-      <button type="button" class="btn btn-secondary club">Learn More</button>
-
-      <div class="club-spacer"></div>
+      <p>The club is a global community of passionate, active gamers with exclusive access to our most sought after products, experiences and offers.</p>
       <div class="club-container">
         <div class="club-item">
           <i class="fas fa-fist-raised"></i>
@@ -123,6 +205,9 @@
           <i class="far fa-building"></i>
           <p>MEETING PLACES</p>
         </div>
+      </div>
+      <div class="club-button">
+            <button type="button" class="btn btn-secondary club">Learn More</button>
       </div>
     </div>
   </div>
@@ -169,3 +254,7 @@
 
 
 </div>
+
+
+
+
