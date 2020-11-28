@@ -7,7 +7,6 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.3",
-    "bower": "^1.8.8",
     "codebird": "^2.6.0",
     "dot": "^2.0.0-beta.1",
     "jquery": "^3.5.1",
