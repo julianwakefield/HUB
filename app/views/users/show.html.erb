@@ -86,9 +86,9 @@
 </div>
 
   <div>
-    <h2>All user</h2>
+    <h2>All users</h2>
     <% @users.each do |user| %>
-      <li><%= link_to user.email, user_path(user) %> </li>
+      <li><%= link_to user.email, user_path(user) %> <%= "add friend" %></li>
     <% end %>
   </div>
 
