@@ -1,10 +1,17 @@
-.form-structure {
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+
+
+.form-structor {
 	background-color: #222;
-	border-radius: 15px;
-	height: 550px;
-	width: 350px;
-	position: relative;
-	overflow: hidden;
+    border-radius: 15px;
+    height: 550px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 50px;
 	
 	&::after {
 		content: '';
@@ -14,15 +21,15 @@
 		background-repeat: no-repeat;
 		background-position: left bottom;
 		background-size: 500px;
-		background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf884ad570b50659c5fa2dc2cfb20ecf&auto=format&fit=crop&w=1000&q=100');
+		background-image: url('https://images.unsplash.com/photo-1588007375287-5689418d2a48?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=668&q=80');
 	}
 	
 	.signup {
 		position: absolute;
-		top: 50%;
+		top: 42%;
 		left: 50%;
 		-webkit-transform: translate(-50%, -50%);
-		width: 65%;
+		width: 80%;
 		z-index: 5;
 		-webkit-transition: all .3s ease;
 		
@@ -65,14 +72,22 @@
 		}
 		
 		.form-holder {
-			border-radius: 15px;
+		    border-radius: 15px;
 			background-color: #fff;
 			overflow: hidden;
-			margin-top: 50px;
 			opacity: 1;
 			visibility: visible;
 			-webkit-transition: all .3s ease;
-			
+			height: 350px;
+			padding-left: 16px;
+			padding-right: 16px;
+			padding-top: 8px;
+			.form-actions {
+				text-align: center;
+				border: 1px solid black;
+				width: 50%;
+				margin: auto;
+			}
 			.input {
 				border: 0;
 				outline: none;
@@ -151,7 +166,7 @@
 			-webkit-transition: all .3s ease;
 			
 			.form-title {
-				color: #000;
+				color: #000 !important;
 				font-size: 1.7em;
 				text-align: center;
 
@@ -251,14 +266,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

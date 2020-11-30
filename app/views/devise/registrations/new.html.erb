@@ -1,27 +1,51 @@
 <div class="topspace">
 
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+<div class="form-structor">
+	<div class="signup">
+		<h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+		<div class="form-holder">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+			  <div class="form-inputs">
+        <%= f.input :email,
+            required: true,
+            autofocus: true,
+            input_html: { autocomplete: "email" }%>
+       </div>
+        <%= f.input :password,
+            required: true,
+            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+            input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+            required: true,
+          input_html: { autocomplete: "new-password" } %>
+	
+      
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+    <% end %>
+    	</div>
+	</div>
+	<div class="login slide-up">
+		<div class="center">
+			<h2 class="form-title" id="login"><span>or</span>Log in</h2>
+			<div class="form-holder">
+			  	<%= form_for(:user, :url => session_path(:user)) do |f| %>
+          <%= f.text_field :email %>
+          <%= f.password_field :password %>
+          <%= f.submit 'Sign in' %>
+          <%= link_to "Forgot your password?", new_password_path(:user) %>
+          <% end %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render "devise/shared/links" %>
+
+
+
+
