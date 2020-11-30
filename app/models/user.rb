@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :user_games
-  has_many :messages
+  has_many :friends
   has_many :chats, :through => :link_to_conversation
   has_many :games, :through => :user_games
   has_one_attached :photo
