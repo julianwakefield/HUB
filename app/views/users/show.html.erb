@@ -76,5 +76,17 @@
 
 </div>
 
+<<<<<<< HEAD
 
 </div>
+=======
+</div>
+
+  <div>
+    <h2>All user</h2>
+    <% @users.each do |user| %>
+      <li><%= link_to user.email, user_path(user) %> </li>
+    <% end %>
+  </div>
+
+>>>>>>> a87972f4bece3d390aa85f8cb1a815ea613d9b7c

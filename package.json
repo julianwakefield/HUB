@@ -12,6 +12,7 @@
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
     "popper.js": "^1.16.1",
+    "siema": "^1.5.1",
     "social-feed": "^0.1.24",
     "turbolinks": "^5.2.0"
   },
