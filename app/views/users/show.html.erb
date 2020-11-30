@@ -66,7 +66,11 @@
   <label for="tab-3" class="label">Who's Online?</label>
   <div class="panel">
     <h1>Who's Online?</h1>
-    <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+    <div>
+      <% @users.each do |user| %>
+        <li><i class="fas fa-circle"></i> <%= link_to user.nickname, user_path(user) %> <%= "add friend" %></li>
+      <% end %>
+    </div>
   </div>
 
   <input name="tabs" type="radio" id="tab-4" class="input"/>
@@ -85,11 +89,5 @@
 
 </div>
 
-  <div>
-    <h2>All users</h2>
-    <% @users.each do |user| %>
-      <li><%= link_to user.email, user_path(user) %> <%= "add friend" %></li>
-    <% end %>
-  </div>
 
 
