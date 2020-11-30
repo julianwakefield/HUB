@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_111527) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "video_link"
   end
 
   create_table "link_to_conversations", force: :cascade do |t|
