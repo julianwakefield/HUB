@@ -8,21 +8,24 @@
         <% if current_user.photo.attached? %>            
             <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
         <%else %>
-            <img src=" https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg" >
+            <img src="https://res.cloudinary.com/tobysangster/image/upload/v1606405986/b0du5258c1stu2l53y9b98rk36yg.jpg" >
         <%end%>
            
     </div>
     <div class="user-top-item-info">
-        <div class="user-top-item-name">
-            <h1><%= @user.nickname %></h1>
-        </div>
-        <div class="user-top-item-email">
+            <h2><%= @user.nickname %>Test</h2>
             <h3><%= @user.email %></h3>
-        </div>
     </div>
     <div class="user-top-item-space">
     </div>
     <div class="user-top-item-achievements">
+        <div class="achievements"><i class="fas fa-trophy"></i></div>
+        <div class="usertext"><p>100</p></div>
+        <div class="hoursplayed"><i class="fas fa-clock"></i></div>
+        <div class="usertext"><p>100</p></div>
+        <div class="games"><i class="fas fa-gamepad"></i></div>
+        <div class="usertext"><p>100</p></div>
+
     </div>
 
 

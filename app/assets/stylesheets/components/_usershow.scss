@@ -1,51 +1,82 @@
 .user-whole-page {
   width: 80%;
   margin: auto;
+  height: 100%;
 }
 
 .user-top-container {
-  background-color: red;
+  margin-top: 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100px;
   padding: 8px;
+  align-items: center;
+  background: #202020;
 }
 
 
 .user-top-item-photo {
-  background-color: orange;
   width: 10%;
   height: 100%;
   img {
-    height: 100%;
-
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
 }
 
 .user-top-item-info {
-  background-color: blue;
+  height: 85px;
+  line-height: 85px;
+  h1 {
+    text-align: center;
+
+  }
+  h3 {
+    text-align: center;
+
+  }
+}
+
+
+
+.user-top-item-space {
   width: 30%;
   height: 100%;
 
 }
 
-.user-top-item-space {
-  width: 20%;
-  background-color: white;
-
-}
-
 .user-top-item-achievements {
-  background-color: green;
-  width: 40%;
+  width: 30%;
   height: 100%;
-
+  display: flex;
+  flex-direction: row;
+  font-size: 40px;
+  justify-content: space-between;
+  font-family: sans-serif;
 
 }
 
+.achievements {
+  i {
+    color: white;
+  }
+}
 
+.games {
+  i {
+    color: white;
+  }
+}
+
+.hoursplayed {
+  i {
+    color: white;
+  }
+}
 
 
 
@@ -64,9 +95,13 @@ body {
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  max-width: 700px;
-  background: transparent;
+  background: #202020;
   box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+  padding-top: 32px;
+  margin-bottom: 32px;
+  padding:8px;
+
+
 }
 
 .input {
@@ -75,14 +110,25 @@ body {
 }
 
 .label {
-  width: 100%;
-  padding: 20px 30px;
-  background: #e5e5e5;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  color: #7f7f7f;
-  transition: background 0.1s, color 0.1s;
+  display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: border-color 125ms ease-in-out;
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(245, 245, 245, 0.6);
+    color: whitesmoke;
+    border-style: solid;
+    border-width: 1px;
+    height: 30px;
+    padding: 0 15px;
 }
 
 .label:hover {
