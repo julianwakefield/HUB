@@ -1,39 +1,92 @@
-<head>
-<!-- jQuery -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Codebird.js - required for TWITTER -->
-<script src="bower_components/codebird-js/codebird.js"></script>
-<!-- doT.js for rendering templates -->
-<script src="bower_components/doT/doT.min.js"></script>
-<!-- Moment.js for showing "time ago" and/or "date"-->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<!-- Moment Locale to format the date to your language (eg. italian lang)-->
-<script src="bower_components/moment/locale/it.js"></script>
-<!-- Social-feed js -->
-<script src="bower_components/social-feed/js/jquery.socialfeed.js"></script>
 
-<script>
-    $(document).ready(function(){
-        $('.social-feed-container').socialfeed({
-            // INSTAGRAM
-            instagram:{
-                accounts: ['@teslamotors','#teslamotors'],  //Array: Specify a list of accounts from which to pull posts
-                limit: 2,                                    //Integer: max number of posts to load
-                client_id: 'YOUR_INSTAGRAM_CLIENT_ID',       //String: Instagram client id (optional if using access token)
-                access_token: 'YOUR_INSTAGRAM_ACCESS_TOKEN' //String: Instagram access token
-            },
-
-            // GENERAL SETTINGS
-            length:400                                      //Integer: For posts with text longer than this length, show an ellipsis.
-        });
-    });
-</script>
+<div class="user-whole-page">
 
 
 
-</head>
+<div class="user-top-container">
+    <div class="user-top-item-photo">
+        <% if @user.photo.attached? %>            
+            <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+        <%else %>
+            <img src=" https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg" >
+        <%end%>
+           
+    </div>
+    <div class="user-top-item-info">
+        <div class="user-top-item-name">
+            <h1><%= @user.nickname %></h1>
+        </div>
+        <div class="user-top-item-email">
+            <h3><%= @user.email %></h3>
+        </div>
+    </div>
+    <div class="user-top-item-space">
+    </div>
+    <div class="user-top-item-achievements">
+    </div>
 
 
-<h1><%= @user.email %></h1>
+</div>
 
-<div class="social-feed-container"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tabs">
+  <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
+  <label for="tab-1" class="label">Activity Feed</label>
+  <div class="panel">
+    <h1>Activity Feed</h1>
+    <p>The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae</p>
+    <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
+  </div>
+
+  <input name="tabs" type="radio" id="tab-2" class="input"/>
+  <label for="tab-2" class="label">Wall</label>
+  <div class="panel">
+    <h1>Wall</h1>
+  </div>
+
+
+  <input name="tabs" type="radio" id="tab-3" class="input"/>
+  <label for="tab-3" class="label">Who's Online?</label>
+  <div class="panel">
+    <h1>Who's Online?</h1>
+    <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+  </div>
+
+  <input name="tabs" type="radio" id="tab-4" class="input"/>
+  <label for="tab-4" class="label">Friends</label>
+  <div class="panel">
+  <h1>Friends</h1>
+  <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+  <div>
+    <h2>All user</h2>
+    <% @users.each do |user| %>
+      <li><%= link_to user.email, user_path(user) %> </li>
+    <% end %>
+  </div>
+
+

@@ -30,6 +30,7 @@ import "bootstrap";
 import { castParallax } from '../components/castParallax';
 import { initChatCable } from "../channels/chat_channel";
 import { cookiesPolicyBar } from "../channels/cookiesPolicyBar";
+import { carousel } from "../components/carousel";
 
 // import { carouseltest1 } from "../components/function"; this is not used
 // import { carouseltest2 } from "../components/function"; this is not used
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () =>{
 	// castParallax(); whta is this for?
 	initChatCable();
   cookiesPolicyBar();
+	carousel();
 });
 
 
