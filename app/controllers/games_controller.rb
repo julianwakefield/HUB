@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     @comment = Comment.new
     @message = Message.new
     @post = Post.new
-  
+
   end
 
   def edit
@@ -48,6 +48,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :photo)
+    params.require(:game).permit(:name, :photo, :video_link)
   end
 end

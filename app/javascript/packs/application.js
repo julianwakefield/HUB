@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { castParallax } from '../components/castParallax';
 import { initChatCable } from "../channels/chat_channel";
+import { cookiesPolicyBar } from "../channels/cookiesPolicyBar";
 
 // import { carouseltest1 } from "../components/function"; this is not used
 // import { carouseltest2 } from "../components/function"; this is not used
@@ -38,6 +39,7 @@ import { initChatCable } from "../channels/chat_channel";
 document.addEventListener('turbolinks:load', () =>{
 	// castParallax(); whta is this for?
 	initChatCable();
+  cookiesPolicyBar();
 });
 
 
@@ -68,10 +70,10 @@ const scrollToTop = () => {
   }
 };
 
-scrollToTopButton.onclick = function(e) {
-  e.preventDefault();
-  scrollToTop();
-}
+// scrollToTopButton.onclick = function(e) {
+//   e.preventDefault();
+//   scrollToTop();
+// }
 
 ////////////////////////////////////////////////////
 const loginBtn = document.getElementById('login');

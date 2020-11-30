@@ -11,10 +11,6 @@
   <%= simple_form_for([@game]) do |f| %>
     <%= f.input :name%>
     <%= f.input :photo, as: :file %>
+    <%= f.input :video_link %>
     <%= f.submit :submit  %>
-
   <% end %>
-
-  <%# <%= link_to "Back", game_path %> %>
-</div>
-
