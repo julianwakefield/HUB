@@ -18,5 +18,9 @@ class UsersController < ApplicationController
       @users = User.all
     end
 
+    def user_params
+      params.require(:user).permit(:photo, :nickname)
+    end
+
 end
 
