@@ -1,31 +1,75 @@
 
 
 
-<h1><%= @user.email %></h1>
+
+
+<div class="user-top-container">
+    <div class="user-top-item-photo">
+        <% if current_user.photo.attached? %>            
+            <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+        <%else %>
+            <img src=" https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg" width="500" height="600">
+        <%end%>
+           
+    </div>
+    <div class="user-top-item-info">
+        <div class="user-top-item-name">
+            <h1><%= @user.nickname %></h1>
+        </div>
+        <div class="user-top-item-email">
+            <h3><%= @user.email %></h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="tabs">
   <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
-  <label for="tab-1" class="label">Orange</label>
+  <label for="tab-1" class="label">Activity Feed</label>
   <div class="panel">
-    <h1>Orange</h1>
+    <h1>Activity Feed</h1>
     <p>The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae</p>
     <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
   </div>
 
   <input name="tabs" type="radio" id="tab-2" class="input"/>
-  <label for="tab-2" class="label">Tangerine</label>
+  <label for="tab-2" class="label">Wall</label>
   <div class="panel">
-    <h1>Tangerine</h1>
-    <p>The tangerine (Citrus tangerina) is an orange-colored citrus fruit that is closely related to, or possibly a type of, mandarin orange (Citrus reticulata).</p>
-    <p>The name was first used for fruit coming from Tangier, Morocco, described as a mandarin variety. Under the Tanaka classification system, Citrus tangerina is considered a separate species.</p>
+    <h1>Wall</h1>
   </div>
 
+
   <input name="tabs" type="radio" id="tab-3" class="input"/>
-  <label for="tab-3" class="label">Clemantine</label>
+  <label for="tab-3" class="label">Who's Online?</label>
   <div class="panel">
-    <h1>Clemantine</h1>
+    <h1>Who's Online?</h1>
     <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
   </div>
+
+  <input name="tabs" type="radio" id="tab-4" class="input"/>
+  <label for="tab-4" class="label">Friends</label>
+  <div class="panel">
+  <h1>Friends</h1>
+  <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+  </div>
+
+
+</div>
+
 </div>
 
   <div>
@@ -34,3 +78,4 @@
       <li><%= link_to user.email, user_path(user) %> </li>
     <% end %>
   </div>
+
