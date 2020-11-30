@@ -1,19 +1,49 @@
+.user-whole-page {
+  width: 80%;
+  margin: auto;
+}
+
 .user-top-container {
   background-color: red;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  height: 100px;
+  padding: 8px;
 }
 
 
+.user-top-item-photo {
+  background-color: orange;
+  width: 10%;
+  height: 100%;
+  img {
+    height: 100%;
+
+  }
+
+}
+
+.user-top-item-info {
+  background-color: blue;
+  width: 30%;
+  height: 100%;
+
+}
+
+.user-top-item-space {
+  width: 20%;
+  background-color: white;
+
+}
+
+.user-top-item-achievements {
+  background-color: green;
+  width: 40%;
+  height: 100%;
 
 
-
-
-
-
-
+}
 
 
 

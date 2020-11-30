@@ -1,5 +1,5 @@
 
-
+<div class="user-whole-page">
 
 
 
@@ -8,7 +8,7 @@
         <% if current_user.photo.attached? %>            
             <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
         <%else %>
-            <img src=" https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg" width="500" height="600">
+            <img src=" https://www.flaticon.com/svg/static/icons/svg/1077/1077063.svg" >
         <%end%>
            
     </div>
@@ -20,6 +20,12 @@
             <h3><%= @user.email %></h3>
         </div>
     </div>
+    <div class="user-top-item-space">
+    </div>
+    <div class="user-top-item-achievements">
+    </div>
+
+
 </div>
 
 
@@ -70,6 +76,10 @@
 
 </div>
 
+
+
+</div>
+
 </div>
 
   <div>
@@ -78,4 +88,5 @@
       <li><%= link_to user.email, user_path(user) %> </li>
     <% end %>
   </div>
+
 
