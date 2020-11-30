@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :messages
   has_many :chats, :through => :link_to_conversation
   has_many :games, :through => :user_games
+  has_one_attached :photo
 end
