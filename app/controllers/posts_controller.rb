@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to game_path(@game)
+    redirect_to game_path(@post.game)
   end
   private
   def post_params
