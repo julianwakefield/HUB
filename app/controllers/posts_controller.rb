@@ -11,12 +11,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @game = Game.find(params[:game_id])
     @post = Post.new(post_params)
-    @post.game = @game
+    if params[:game_id]
+      @game = Game.find(params[:game_id])
+      @post.game = @game
+    end
     @post.user = current_user
     if @post.save!
-      redirect_to game_path(@game)
+      if params[:game_id]
+        redirect_to game_path(@game)
+      else
+        redirect_to user_path(current_user)
+      end 
     else
       render :new
     end

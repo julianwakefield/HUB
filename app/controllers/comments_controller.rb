@@ -16,7 +16,11 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @game = @post.game
     if @comment.save!
-      redirect_to game_path(@game)
+      if @game
+        redirect_to game_path(@game)
+      else 
+        redirect_to user_path(current_user)
+      end
     else
       render :new
     end

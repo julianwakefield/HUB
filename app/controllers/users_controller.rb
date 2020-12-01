@@ -6,10 +6,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
   # GET /users/:id
+
+
   def show
     @user = User.find(params[:id])
-    # Rails does the magic.
+    @posts = Post.where(user: @user).order(created_at: :desc)
+    @comment = Comment.new
+    @post = Post.new
   end
+
+
+
+
+
 
   def add_friends
     @user = User.find(params[:user])
