@@ -30,20 +30,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="tabs">
   <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
   <label for="tab-1" class="label">Activity Feed</label>
@@ -68,7 +54,7 @@
       <% @users.each do |user| %>
         <li><i class="fas fa-circle"></i> <%= link_to user.nickname, user_path(user) %>
         <% unless current_user.friends_with?(user) %>
-          <%= link_to "add friend", add_friends_path(user: user.id), method: :post, remote: true,:html=>{:id=>"/users"} %></li>
+          <%= link_to "add friend", add_friends_path(user: user.id), method: :post %></li>
         <% else %>
           <%= link_to "remove friend", remove_friends_path(user: user.id), method: :post %></li>
         <% end %>
@@ -80,9 +66,13 @@
   <label for="tab-4" class="label">Friends</label>
   <div class="panel">
   <h1>Friends</h1>
-    <% current_user.friends.each do |friend| %>
-      <li><p><%= friend.nickname %></p></li>
-    <% end %>
+    <% if  @user.friends.present? %>
+      <% @user.friends.each do |friend| %>
+        <li><p><%= link_to friend.nickname, user_path(friend) %></p></li>
+      <% end %>
+    <% else %>
+      <p><%= @user.nickname %> doesn't have any friends yet</p> 
+    <% end %>  
   </div>
 
 
