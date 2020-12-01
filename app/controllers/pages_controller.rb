@@ -9,6 +9,6 @@ class PagesController < ApplicationController
     @games = Game.all
     @post = Post.new
     @comment = Comment.new
-    
+    @articles = Article.all
   end
 end
