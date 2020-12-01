@@ -42,6 +42,13 @@ document.addEventListener('turbolinks:load', () =>{
 	initChatCable();
   cookiesPolicyBar();
 	carousel();
+  // const links = document.querySelectorAll(".test");
+  // links.forEach(link => {
+  //   link.addEventListener("click", e => {
+      const tab = document.getElementById("tab-3");
+      tab.click();
+  //   });
+  // })
 });
 
 
