@@ -1,6 +1,8 @@
 .cookieAcceptBar {
-  // display:none;
-  // position: fixed;
+  display:none;
+  width: 40%;
+  margin: auto;
+  position: fixed;
   top: 50%;
   left:0;
   right: 0;
@@ -19,14 +21,19 @@
   font-weight: bold;
 }
 
-#cookieAcceptBarConfirm {
-  cursor: pointer;
-  border: none;
-  background-color: #2387c0;
-  color: #fff;
-  text-transform: uppercase;
-  margin-top: 10px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 20px;
+.show {
+  display: block !important;
 }
+
+
+// #cookieAcceptBarConfirm {
+//   cursor: pointer;
+//   border: none;
+//   background-color: #2387c0;
+//   color: #fff;
+//   text-transform: uppercase;
+//   margin-top: 10px;
+//   height: 40px;
+//   line-height: 40px;
+//   padding: 0 20px;
+// }
