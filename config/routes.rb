@@ -19,6 +19,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index] do 
+    resources :posts, only: [:new, :create, :update, :edit] do
+      resources :comments, only: [:new, :create, :update]
+    end 
+  end
   get '/dashboard', to: 'pages#dashboard'
+
 end
