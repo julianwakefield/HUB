@@ -11,6 +11,19 @@ class UsersController < ApplicationController
     # Rails does the magic.
   end
 
+  def add_friends
+    @user = User.find(params[:user])
+    current_user.friend_request(@user)
+    @user.accept_request(current_user)
+    redirect_back fallback_location: "/users"
+  end
+
+  def remove_friends
+    @user = User.find(params[:user])
+    current_user.remove_friend(@user)
+    redirect_back fallback_location: "/users"
+  end
+
   # GET /users
   private
 

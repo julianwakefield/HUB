@@ -68,7 +68,12 @@
     <h1>Who's Online?</h1>
     <div>
       <% @users.each do |user| %>
-        <li><i class="fas fa-circle"></i> <%= link_to user.nickname, user_path(user) %> <%= "add friend" %></li>
+        <li><i class="fas fa-circle"></i> <%= link_to user.nickname, user_path(user) %>
+        <% unless current_user.friends_with?(user) %>
+          <%= link_to "add friend", add_friends_path(user: user.id), method: :post, remote: true,:html=>{:id=>"/users"} %></li>
+        <% else %>
+          <%= link_to "remove friend", remove_friends_path(user: user.id), method: :post %></li>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -77,7 +82,9 @@
   <label for="tab-4" class="label">Friends</label>
   <div class="panel">
   <h1>Friends</h1>
-  <p>A clementine (Citrus ×clementina) is a hybrid between a mandarin orange and a sweet orange, so named in 1902. The exterior is a deep orange colour with a smooth, glossy appearance. Clementines can be separated into 7 to 14 segments. Similarly to tangerines, they tend to be easy to peel.</p>
+    <% current_user.friends.each do |friend| %>
+      <li><p><%= friend.nickname %></p></li>
+    <% end %>
   </div>
 
 
