@@ -40,7 +40,15 @@ import { carousel } from "../components/carousel";
 document.addEventListener('turbolinks:load', () =>{
   initChatCable();
   cookiesPolicyBar();
-  carousel();
+
+	carousel();
+  // const links = document.querySelectorAll(".test");
+  // links.forEach(link => {
+  //   link.addEventListener("click", e => {
+      const tab = document.getElementById("tab-3");
+      tab.click();
+  //   });
+  // })
 });
 
 

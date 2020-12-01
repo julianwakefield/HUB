@@ -111,7 +111,7 @@ body {
   padding-top: 32px;
   margin-bottom: 32px;
   padding:8px;
- 
+
 
 }
 
@@ -183,4 +183,28 @@ body {
 
 .fa-circle {
   color: green;
+  margin-right: 10px;
+}
+
+.fa-user-plus {
+  font-size: 12px;
+}
+.fa-user-plus:hover {
+  color: #fa3c6e !important;
+  transition: all .25s ease-in-out;
+}
+.user-top-item-little-photo {
+  display: flex;
+  align-items: center;
+  flex-grow: 5;
+  height: 100%;
+  img {
+    height: 28px;
+    width: 28px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  a {
+    margin-right: 10px;
+  }
 }
