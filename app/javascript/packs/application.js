@@ -38,9 +38,9 @@ import { carousel } from "../components/carousel";
 
 // import { background } from '../channels/background'
 document.addEventListener('turbolinks:load', () =>{
-	// castParallax(); whta is this for?
-	initChatCable();
+  initChatCable();
   cookiesPolicyBar();
+
 	carousel();
   // const links = document.querySelectorAll(".test");
   // links.forEach(link => {

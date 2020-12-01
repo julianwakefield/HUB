@@ -1,35 +1,6 @@
 <div class="user-whole-page">
 
 
-  <div class="user-top-container">
-      <div class="user-top-item-photo">
-          <% if @user.photo.attached? %>
-              <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-          <%else %>
-              <img src="https://res.cloudinary.com/tobysangster/image/upload/v1606405986/b0du5258c1stu2l53y9b98rk36yg.jpg" >
-          <%end%>
-      </div>
-      <div class="user-top-item-info">
-              <h2><%= @user.nickname %>Test</h2>
-              <h3><%= @user.email %></h3>
-      </div>
-      <div class="user-top-item-space"></div>
-      <div class="user-top-item-achievements">
-        <div class="achievements"><i class="fas fa-trophy"></i><p>100</p></div>
-        <div class="hoursplayed"><i class="fas fa-clock"></i><p>100</p></div>
-        <div class="gamesplayed"><i class="fas fa-gamepad"></i><p>100</p></div>
-      </div>
-  </div>
-
-  <div class="tabs">
-    <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
-    <label for="tab-1" class="label">Activity Feed</label>
-    <div class="panel">
-      <h1>Activity Feed</h1>
-      <p>The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae</p>
-      <p>The fruit of the Citrus × sinensis is considered a sweet orange, whereas the fruit of the Citrus × aurantium is considered a bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
-
-
 
 <div class="user-top-container">
     <div class="user-top-item-photo">
@@ -48,7 +19,6 @@
         <div class="achievements"><i class="fas fa-trophy"></i><p>100</p></div>
         <div class="hoursplayed"><i class="fas fa-clock"></i><p>100</p></div>
         <div class="gamesplayed"><i class="fas fa-gamepad"></i><p>100</p></div>
-
     </div>
 </div>
 
@@ -56,36 +26,6 @@
 
 
 
-
-    <input name="tabs" type="radio" id="tab-2" class="input"/>
-    <label for="tab-2" class="label">Wall</label>
-    <div class="panel">
-      <h1>Wall</h1>
-    </div>
-
-
-    <input name="tabs" type="radio" id="tab-3" class="input"/>
-    <label for="tab-3" class="label">Who's Online?</label>
-    <div class="panel">
-      <h1>Who's Online?</h1>
-      <div>
-        <% @users.each do |user| %>
-          <div class="user-top-item-little-photo">
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key %>
-            <%else %>
-              <img src="https://res.cloudinary.com/tobysangster/image/upload/v1606405986/b0du5258c1stu2l53y9b98rk36yg.jpg" >
-            <%end%>
-            <i class="fas fa-circle"></i>
-              <%= link_to user.nickname, user_path(user) %>
-              <% unless current_user.friends_with?(user) %>
-                <% if @user == current_user %>
-                  <%= link_to add_friends_path(user: user.id), method: :post, remote: true do %>
-                    <i class="fas fa-user-plus"></i>
-                  <% end %>
-                <% end %>
-              <% end %>
-          </div>
 
 
 
@@ -120,28 +60,9 @@
           <%= link_to "add friend", add_friends_path(user: user.id), method: :post %></li>
         <% else %>
           <%= link_to "remove friend", remove_friends_path(user: user.id), method: :post %></li>
-
         <% end %>
-      </div>
-    </div>
-
-
-    <input name="tabs" type="radio" id="tab-4" class="input"/>
-    <label for="tab-4" class="label">Friends</label>
-    <div class="panel">
-      <h1>Friends</h1>
-      <% if @user.friends.present? %>
-        <% @user.friends.each do |friend| %>
-          <li><p><%= link_to friend.nickname, user_path(friend) %></p></li>
-          <% if @user == current_user %>
-          <%= link_to "remove friend", remove_friends_path(user: friend.id), method: :post %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <p><%= @user.nickname %> doesn't have any friends yet</p>
       <% end %>
     </div>
-
       </div>
 
   </div>
@@ -161,15 +82,16 @@
     <% end %>  
       </div>
 
-
   </div>
+
+
+</div>
+
+
+
 </div>
 
 </div>
-
-</div>
-
-
 
 
     <%= simple_form_for([current_user,@post]) do |f| %>
