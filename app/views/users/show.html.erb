@@ -27,10 +27,51 @@
 
 
 </div>
+<div class="show-box-right">
+
+<ul><% current_user.posts.each do |post| %>
+    <li>
+      <% if post.photo.attached? %>
+      <%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %>
+      <% end %>
+     <h5><%= post.content %></h5>
+      <% if post.user == current_user %>
+       <br><%= link_to 'Delete Post'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
+       <% end %>
+      <% post.comments.each do |comment| %>
+       <p class="comments"> <%= comment.content %>
+       <% if comment.user == current_user %>
+       <br><%= link_to 'Delete comment'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
+       <% end %>
+      <% end %> 
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+           <h5><%= post.content %></h5>
+              <% post.comments.each do |comment| %>
+                <ul>
+                  <li>
+                    <div class="posts-modal-box"><p class="modal-content"><%= comment.content %></p></div>
+                    <div><p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p></div>
+                  </li>
+                </ul>
+                    <% end %>
+                      <%= simple_form_for [current_user,post,@comment] do |f| %>
+                      <%= f.input :content, label: false %>
+                      <%= f.submit :comment, class: 'modal-button' %>
+                      <% end %>
+                </li>
+                <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-
-
+</div>
 
 
 
