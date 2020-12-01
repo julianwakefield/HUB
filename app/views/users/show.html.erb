@@ -32,20 +32,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="tabs">
   <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
   <label for="tab-1" class="label">Activity Feed</label>
@@ -82,9 +68,13 @@
   <label for="tab-4" class="label">Friends</label>
   <div class="panel">
   <h1>Friends</h1>
-    <% current_user.friends.each do |friend| %>
-      <li><p><%= friend.nickname %></p></li>
-    <% end %>
+    <% if  @user.friends.present? %>
+      <% @user.friends.each do |friend| %>
+        <li><p><%= link_to friend.nickname, user_path(friend) %></p></li>
+      <% end %>
+    <% else %>
+      <p><%= @user.nickname %> doesn't have any friends yet</p> 
+    <% end %>  
   </div>
 
 
