@@ -56,7 +56,7 @@
       <% @users.each do |user| %>
         <li><i class="fas fa-circle"></i> <%= link_to user.nickname, user_path(user) %>
         <% unless current_user.friends_with?(user) %>
-          <%= link_to "add friend", add_friends_path(user: user.id), method: :post, remote: true,:html=>{:id=>"/users"} %></li>
+          <%= link_to "add friend", add_friends_path(user: user.id), method: :post %></li>
         <% else %>
           <%= link_to "remove friend", remove_friends_path(user: user.id), method: :post %></li>
         <% end %>
