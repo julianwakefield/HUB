@@ -23,6 +23,7 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'stream_rails'
 
+gem 'has_friendship'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

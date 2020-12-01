@@ -8,13 +8,17 @@ Rails.application.routes.draw do
   resources :chats, only: [:show] do
     resources :messages, only: [:create]
   end
+  
+  post '/add-friends', to: 'users#add_friends'
+  post '/remove-friends', to: 'users#remove_friends'
+
   resources :games do
     resources :user_games, only: [:create]
     resources :posts, only: [:new, :create, :update, :edit] do
-     resources :comments, only: [:new, :create, :update]
+      resources :comments, only: [:new, :create, :update]
     end
   end
-
+  
   resources :users, only: [:show, :index]
   get '/dashboard', to: 'pages#dashboard'
 end
