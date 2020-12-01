@@ -4,40 +4,40 @@
     <h3><%= @game.name %> </h3>
   </div>
 <div class="show-top">
-  <div class="video-responsive">
-    <iframe src="https://www.youtube.com/embed/LembwKDo1Dk?vq=hd1080&autoplay=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&fs=0&color=white&autohide=0&disablekb=1" width="1000" height="630" frameborder="0"></iframe>  </div>
-</div>
+  <% if @game.video_link %>
+    <div class="video-responsive">
+      <iframe src="<%= @game.video_link %>" width="1000" height="630" frameborder="0"></iframe>  </div>
+    </div>
+  <% end %>
 
 <div class="show-container">
   <div class="show-box-left"><h1></h1>
       <div class="show-photo">
-      <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
-
+        <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
 
+      <%= simple_form_for([@game,@post]) do |f| %>
+        <%= f.input :content, label: false  %>
+        <%= f.input :photo, as: :file, label: false  %>
+        <%= f.button :submit, "Create New Post", class: "create-post-button " %>
+      <% end %>
 
-       <%= simple_form_for([@game,@post]) do |f| %>
-                  <%= f.input :content, label: false  %>
-                  <%= f.input :photo, as: :file, label: false  %>
-                  <%= f.button :submit, "Create New Post", class: "create-post-button " %>
+      <% user_game =  current_user.user_games.find_by(game: @game) %>
+        <% if user_game.nil?  %>
+          <%= link_to  game_user_games_path(@game), method: :post do %>
+          <i class="far fa-thumbs-up"></i>
           <% end %>
-          <% user_game =  current_user.user_games.find_by(game: @game) %>
-              <% if user_game.nil?  %>
-                <%= link_to  game_user_games_path(@game), method: :post do %>
-                <i class="far fa-thumbs-up"></i>
-                <% end %>
-              <% else %>
-                <%= link_to user_game_path(user_game), method: :delete do %>
-                <i class="far fa-thumbs-down"></i>
-                <% end %>
-              <% end %>
-               <%= link_to game_path(@game), method: :delete do %>
-               <i class="fas fa-gamepad"></i>
-               <% end %>
-
+        <% else %>
+          <%= link_to user_game_path(user_game), method: :delete do %>
+          <i class="far fa-thumbs-down"></i>
+          <% end %>
+        <% end %>
+         <%= link_to game_path(@game), method: :delete do %>
+         <i class="fas fa-gamepad"></i>
+         <% end %>
   </div>
 
-<div class="show-box-right">    
+<div class="show-box-right">
   <ul><% @posts.each do |post| %>
     <li>
       <% if post.photo.attached? %>
@@ -72,7 +72,7 @@
                       <% end %>
                 </li>
                 <% end %>
-            </ul>       
+            </ul>
           </div>
         </div>
       </div>

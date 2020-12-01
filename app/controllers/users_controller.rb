@@ -15,7 +15,11 @@ class UsersController < ApplicationController
   private
 
     def set_users
-      @users = User.all
+      @users =  User.where.not id: current_user.id
+    end
+
+    def user_params
+      params.require(:user).permit(:photo, :nickname)
     end
 
 end
