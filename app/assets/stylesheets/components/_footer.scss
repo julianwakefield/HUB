@@ -11,17 +11,20 @@
     padding-top: 100px;
     padding-bottom: 50px;
     padding-left: 3%;
+    padding-right: 3%;
     left: 0;
     bottom: 0;
     width: 100%;
     color: grey;
     text-align: center;
-    // background-color: #7E806F;
     background-color: #2a2a2a;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    img {
+        height: 100px;
+    }
     h2 {
         color: grey !important;
     }
