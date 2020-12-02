@@ -7,6 +7,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.3",
+    "cable_ready": "^4.4.3",
     "codebird": "^2.6.0",
     "dot": "^2.0.0-beta.1",
     "jquery": "^3.5.1",
@@ -14,6 +15,8 @@
     "popper.js": "^1.16.1",
     "siema": "^1.5.1",
     "social-feed": "^0.1.24",
+    "stimulus": "^1.1.1",
+    "stimulus_reflex": "3.3.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
