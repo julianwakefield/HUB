@@ -1,25 +1,17 @@
-
-
-
 <div class="dashboardbody">
-
-
-
   <div class="dashboard-top">
-      <div class="dashboard-top-text">
-        <div class="dashboard-top-top">
-        </div>
-        <div class="dashboard-top-bottom">
-            <h4>Dashboard</h4>
-        </div>
+    <div class="dashboard-top-text">
+      <div class="dashboard-top-bottom">
+        <h1>Dashboard</h1>
       </div>
-      <div class="dashboard-top-search">
-        <h4><i class="fas fa-search"></i></h4>
-      </div>
+    </div>
   </div>
+
   <div class="other-top">
-    <div class="other-top-left"><p>Favourites<p></div>
-    <a class="other-top-right" id="" role="link" href="/games">View More</a>  </div>
+    <div class="other-top-left"><h2>Favourites<h2></div>
+    <a class="other-top-right" id="" role="link" href="/games">View More</a>
+  </div>
+  <p class="text-dashboard">Your favourite games in the whole world, arranged beautifully for you by the team at <strong>Hub</strong></p>
   <div class="display-favourites">
     <div class="cards">
       <% current_user.games.each do |game| %>
@@ -36,9 +28,8 @@
     </div>
   </div>
 
-  <div class="other-top">
-    <p>News</p>
-  </div>
+  <div class="other-top"><h2>News</h2></div>
+  <p class="text-dashboard">Be one on the first informed on the future and hottest releases</p>
 
   <div class="news">
     <figure class="article1">
@@ -61,6 +52,8 @@
     </figure>
   </div>
 
+  <div class="other-top"><h2>Browse</h2></div>
+  <p class="text-dashboard">Be one on the first informed on the future and hottest releases</p>
 
   <div class="news-cards">
   <% @articles.first(4).each do |article| %>
@@ -87,10 +80,10 @@
     <% end %>
   <% end %>
 </div>
-
-<button class="prev">Prev</button>
-<button class="next">Next</button>
-
+<div class="controls">
+  <button class="prev"><</button>
+  <button class="next">></button>
+</div>
 
   <div class="exclusive-top">
     <h4>Hub Club</h4>

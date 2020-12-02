@@ -363,10 +363,11 @@ figcaption {
 .other-top {
     height: 48px;
     text-align: left;
-    padding-top: 8px;
-    margin-bottom: -7px;
     display: flex;
     justify-content: space-between;
+    border-bottom: solid 1px #848484;
+    margin-bottom: 8px;
+    margin-top: 30px;
     .other-top-right {
         display: inline-flex;
         -webkit-box-align: center;
@@ -533,4 +534,40 @@ figcaption {
     opacity: .5;
   }
 
-  
+
+.text-dashboard {
+  font-style: italic;
+}
+
+.prev {
+  padding: 0px;
+  font-size: 90px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.next {
+  padding: 0px;
+  font-size: 90px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.controls {
+  width: 100%;
+  position: relative;
+}
