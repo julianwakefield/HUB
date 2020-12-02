@@ -4,7 +4,7 @@ const carousel = () => {
         selector: '.games',
         perPage: {
           768: 2,
-          1024: 3,
+          1024: 4,
         },
       });
       const prev = document.querySelector('.prev');

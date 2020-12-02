@@ -25,7 +25,6 @@ class GamesController < ApplicationController
     @comment = Comment.new
     @message = Message.new
     @post = Post.new
-
   end
 
   def edit
