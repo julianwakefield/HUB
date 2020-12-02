@@ -25,12 +25,13 @@
       <% current_user.games.each do |game| %>
         <%= link_to game_path(game) do %>
           <figure class="dashboard-card">
-          <% if game.photo.attached? %>
+           <% if game.photo.attached?  %>
           <img src="<%= cl_image_path game.photo.key %>">
           <%# <p class="img-description"><%= game.name %></p>
           </figure>
         <% end %>
-      <% end %>
+        <% end %>
+      
       <% end %>
     </div>
   </div>
@@ -173,7 +174,7 @@
 
 
 
-</div>
+
 
 
 
