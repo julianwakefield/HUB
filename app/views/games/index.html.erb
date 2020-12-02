@@ -1,7 +1,7 @@
 
 <div class="topspace">
 <div class="index-text">
-  <h1>Browse all games</h1>
+  <h4>Browse all games</h4>
 </div>
 <div class="container" id="index-all">
   <div class="cards">
@@ -13,11 +13,12 @@
             <% user_game =  current_user.user_games.find_by(game: game) %>
               <% if user_game.nil?  %>
                 <%= link_to game_user_games_path(game), method: :post do %>
-                  <i class="far fa-thumbs-up"></i>
+                  <div class="favs">Favourite?</div>
                 <% end %>
               <% else %>
                 <%= link_to user_game_path(user_game), method: :delete do %>
-                  <i class="far fa-thumbs-down"></i>
+                  <div class="favs-tick"><i class="far fa-bookmark"></i></div>
+                  <div class="favs">Unfavourite?</div>
                 <% end %>
               <% end %>
             </div>
@@ -83,3 +84,4 @@
 
 </ul>
 <% end %>
+</div>
