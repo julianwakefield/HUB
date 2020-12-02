@@ -45,6 +45,8 @@
     padding-bottom:56.25%;
     position:relative;
     height:0;
+    border-bottom: 4px solid black;
+    margin-bottom: 8px;
 }
 .video-responsive iframe{
     left:0;
@@ -125,4 +127,14 @@
 
 .white-name {
   color:white;
+}
+
+.reviews {
+  padding:10px;
+  background-color:grey;
+  margin-bottom:10px;
+}
+
+.span-font {
+  font-size:12px;
 }

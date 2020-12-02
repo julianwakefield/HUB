@@ -71,12 +71,13 @@
       
 
       <ul><% @posts.each do |post| %>
-        <li>
+        <li class="reviews">
+          <h5 class="white-name"><%= post.user.nickname %> <span class="white-name span-font"><%= post.created_at.strftime("%A %H:%M") %></span></h5>
+          <p class="white-name"><%= post.content %></p>
           <% if post.photo.attached? %>
             <%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %>
           <% end %>
 
-          <h5><%= post.content %></h5>
 
           <% if post.user == current_user %>
             <br><%= link_to 'Delete review'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
