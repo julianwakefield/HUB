@@ -32,8 +32,9 @@
 
 #cookieAcceptBar:hover {
   background: #574a4a;
-  color: white;
   text-decoration: none;
+  color: white;
+  border: 2px solid #ced4da;
 }
 
 #cookieAcceptBarConfirm {
@@ -41,8 +42,8 @@
 }
 
 #cookieAcceptBarConfirm:hover {
-  color: #fa3c6e !important;
-  transition: all .25s ease-in-out;
+  color: #ced4da;
+  cursor: default;
 }
 
 #declineBarConfirm {
@@ -50,6 +51,6 @@
 }
 
 #declineBarConfirm:hover {
-  color: #fa3c6e !important;
-  transition: all .25s ease-in-out;
+  color: #ced4da;
+  cursor: default;
 }
