@@ -28,6 +28,9 @@
          <%= link_to game_path(@game), method: :delete do %>
          <i class="fas fa-gamepad"></i>
          <% end %>
+
+ <% unless @game.chats.empty? %>
+
  <div class="">
     <h3 class="white-name"><%= @game.chats.first.name %> chat</h3>
     <%= render 'messages/message', chat: @game.chats.first  %>
@@ -38,10 +41,14 @@
     <% end %>
     </div>
   </div>
+
+  <% end %>
+
   </div>   
    </div>
 
    
+
 
     <div class="show-box-right">
       <div class="">
@@ -51,6 +58,7 @@
           </div>
         <% end %>
       </div>
+
 
         <%= simple_form_for([@game,@post]) do |f| %>
         <%= f.input :content, label: false  %>
@@ -104,5 +112,23 @@
   </div>
 </div>
 </div>
+
+<% unless @game.chats.empty? %>
+  <div class="show-forum">
+    <h1 class="white-name"><%= @game.chats.first.name %></h1>
+   <%= render 'messages/message', chat: @game.chats.first  %> 
+    <div class="chat-box">
+      <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
+        <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
+        <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+<%= link_to 'Go back to games',  games_path %>
+</div>
+<% end %>
+</div>
+
  
   <%= link_to 'Go back to games',  games_path %>
+
