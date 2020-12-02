@@ -31,7 +31,7 @@
           </figure>
         <% end %>
         <% end %>
-      
+
       <% end %>
     </div>
   </div>
@@ -79,7 +79,7 @@
   </div>
 
 <div class="games">
-  <% @games.each do |game| %> 
+  <% @games.each do |game| %>
     <%= link_to game_path(game) do %>
     <% if game.photo.attached?  %>
       <%= cl_image_tag(game.photo.key, class: "d-block w-100 carousel-img-size") %>
@@ -96,11 +96,20 @@
     <h4>Hub Club</h4>
   </div>
   <div class="exclusive-container-top">
+    <div class="exclusive-right-top">
+      <p>
+        The club is a global community of passionate, active gamers with exclusive access to our most
+        sought after products, experiences and offers. We work with a club where you can pay a monthly
+        fee and have access to various features and benefits. Priority access to the best of the Hub,
+        with exclusive early access to all of our most anticipated releases, limited editions and
+        collaborations. Access to offers and discounts from selected gaming industry partners.
+        Acces to a members only forum. Access to backstage and interviews in the biggest gaming
+        conventions as PAX (South, East, West), ELECTRONIC ENTERTAINMENT EXPO (E3), DREAMHACK, and more.
+      </p>
+    </div>
     <div class="exclusive-left-top">
     <img src="https://media0.giphy.com/media/LCmDrFzxMU7zXpOMRe/giphy.gif" alt="">
     </div>
-    <div class="exclusive-right-top">
-      <p>The club is a global community of passionate, active gamers with exclusive access to our most sought after products, experiences and offers.</p>
       <div class="club-container">
         <div class="club-item">
           <i class="fas fa-fist-raised"></i>
@@ -128,9 +137,8 @@
         </div>
       </div>
       <div class="club-button">
-            <button type="button" class="btn btn-secondary club">Learn More</button>
+            <button type="button" class="btn btn-secondary club">APPLY FOR MEMBERSHIP</button>
       </div>
-    </div>
   </div>
 
 
@@ -142,40 +150,3 @@
     <div class="exclusive-right-bottom">
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
