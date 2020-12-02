@@ -1,3 +1,5 @@
+html { height: 100%; }
+
 .user-whole-page {
   width: 80%;
   margin: auto;
@@ -19,6 +21,7 @@
 .user-top-item-photo {
   width: 10%;
   height: 100%;
+  padding: 8px;
   img {
     height: 85px;
     width: 85px;
@@ -31,13 +34,16 @@
 .user-top-item-info {
   height: 85px;
   line-height: 85px;
+  padding: 8px;
+  padding-left: 16px;
   h1 {
     text-align: center;
-
   }
   h3 {
     text-align: center;
-
+  }
+  h5 {
+    color: white;
   }
 }
 
@@ -56,6 +62,7 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: sans-serif;
+  padding: 8px;
 
 }
 
@@ -122,28 +129,25 @@ body {
 
 .label {
   display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    line-height: normal;
-    font-weight: 500;
-    text-transform: uppercase;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    transition: border-color 125ms ease-in-out;
-    background: rgba(0, 0, 0, 0);
-    border-color: rgba(245, 245, 245, 0.6);
-    color: whitesmoke;
-    border-style: solid;
-    border-width: 1px;
-    height: 30px;
-    padding: 0 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 125ms ease-in-out;
+  background: rgba(0, 0, 0, 0);
+  color: gray;
+  height: 30px;
+  padding: 0 15px;
 }
 
 .label:hover {
-  background: #d8d8d8;
+  color: white;
 }
 
 .label:active {
@@ -156,19 +160,25 @@ body {
 }
 
 .input:checked + .label {
-  background: #fff;
-  color: #000;
+  font-weight: bolder;
+  border-bottom: 4px solid white;
+  color: white;
+
 }
 
 @media (min-width: 600px) {
   .label {
-    width: auto;
+    width: 33.3%;
   }
 }
 
 .panel {
   display: none;
   padding: 20px 30px 30px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+
 }
 
 @media (min-width: 600px) {
@@ -194,7 +204,7 @@ body {
   transition: all .25s ease-in-out;
 }
 .user-top-item-little-photo {
-  display: flex;
+  // display: flex;
   align-items: center;
   flex-grow: 5;
   height: 100%;
@@ -207,4 +217,61 @@ body {
   a {
     margin-right: 10px;
   }
+}
+
+.show-comments {
+
+  .btn {
+    background-color: transparent;
+    color: white;
+    font-family: 'Whitney Medium';
+    font-size: 11px;
+    padding: 5px 5px;
+    border-top: 2px solid #574a4a;
+    border-bottom: 2px solid #574a4a;
+    border-color: transparent;
+  }
+  .btn:hover {
+    background-color: black;
+ }
+ p {
+   margin-bottom: 8px;
+   padding-left: 0px;
+ }
+ 
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.show-submit {
+  display: flex;
+  justify-content: space-between;
+  .form-control-file {
+    background-color: #131313;
+    color: #b5b5b4;
+  }
+  .file-upload-button {
+    background-color: red;
+
+  }
+}
+
+.create-post-button-1{
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  font-size: 13px;
+  font-weight: bold;
+  -webkit-transition: all .3s ease;
+  text-align: center;
+  height: 30px;
+  padding: 0px 16px;
+}
+
+.create-post-button-1:hover {
+  transition: all .3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }

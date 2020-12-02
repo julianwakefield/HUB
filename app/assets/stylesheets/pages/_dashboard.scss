@@ -481,3 +481,57 @@ figcaption {
 
     }
 }
+
+
+.searchbar-container {
+    width: 200px;
+    height: 100%;
+    position: relative;
+  }
+  
+  h1 {
+    margin: 2rem;  
+  }
+  
+  .searchbar {
+    width: 200px;
+    height: 26px;
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    box-shadow: 0 1rem 2rem rgba(black, .1);
+    padding: 8px;
+    // position: relative;
+    transition: all .2s;
+    transition-delay: .1s;
+    color: white;
+    background-color: #2a2a2a;
+  }
+  
+  .searchbar:hover {
+    width: 200px;
+  }
+  
+  .search-button {
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    right: 8px;
+    transition: all .2s;
+    transition-delay: .1s;
+}
+  
+  
+  .button:hover {
+    cursor: pointer;
+  }
+  
+  .searchbar:hover + .button {
+    height: 2.5rem;
+    top: 1.8rem;
+    right: 0;
+  }
+  
+  .searchbar::placeholder {
+    opacity: .5;
+  }
