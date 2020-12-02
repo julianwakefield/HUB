@@ -2,7 +2,7 @@
 <div class="topspace">
 
   <div class="top-show">
-    <h2><%= @game.name %> </h2>
+    <h1><%= @game.name %> </h1>
   </div>
 
  
@@ -39,6 +39,8 @@
         <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
         <%= f.submit %>
     <% end %>
+ 
+  <%= link_to 'Go back to games',  games_path %>
     </div>
   </div>
 
@@ -54,18 +56,19 @@
       <div class="">
         <% if @game.video_link %>
           <div class="video-responsive">
-            <iframe src="<%= @game.video_link %>" width="1000" height="630" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://www.youtube.com/embed/NVdf7KrevF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="<%= @game.video_link %>" width="1000" height="1000" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://www.youtube.com/embed/NVdf7KrevF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         <% end %>
+      <h5 class="white-name">Reviews</h5>
       </div>
 
 
         <%= simple_form_for([@game,@post]) do |f| %>
         <%= f.input :content, label: false  %>
         <%= f.input :photo, as: :file, label: false  %>
-        <%= f.button :submit, "Create New review", class: "create-post-button " %>
+        <%= f.button :submit, "Submit review", class: "create-post-button " %>
       <% end %>
-
+      
 
       <ul><% @posts.each do |post| %>
         <li>
@@ -85,7 +88,7 @@
               <br><%= link_to 'Delete comment'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
            <% end %>
           <% end %> 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
+          <button type="button" class="create-post-button " data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
@@ -113,9 +116,11 @@
 </div>
 </div>
 
+
+
 <% unless @game.chats.empty? %>
   <div class="show-forum">
-    <h1 class="white-name"><%= @game.chats.first.name %></h1>
+    <h3 class="white-name"><%= @game.chats.first.name %></h3>
    <%= render 'messages/message', chat: @game.chats.first  %> 
     <div class="chat-box">
       <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
@@ -129,6 +134,5 @@
 <% end %>
 </div>
 
- 
-  <%= link_to 'Go back to games',  games_path %>
+
 
