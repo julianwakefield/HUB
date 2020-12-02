@@ -1,20 +1,19 @@
-require 'byebug'
-require 'nokogiri'
-require 'open-uri'
+# require 'byebug'
+# require 'nokogiri'
+# require 'open-uri'
 
-class Scraper
-    def initialize
-        html = open("https://www.ea.com/games/library/action", 'User-Agent' => 'firefox')
-        doc = Nokogiri::HTML(html)
-        gamelist = doc.css("ea-game-box")
+# class Scraper
+#     def initialize
+#         html = open("https://www.ea.com/games/library/action", 'User-Agent' => 'firefox')
+#         doc = Nokogiri::HTML(html)
+#         gamelist = doc.css("ea-game-box")
        
-            gamelist.first.attr('background-image') gamelist.first.attr('title')
-        byebug
-        # end
-    end
+#             gamelist.first.attr('background-image') gamelist.first.attr('title')
+#         # end
+#     end
 
 
-end
+# end
 
 # gamelist.css("tr").first.css(".title > h3").text
 
