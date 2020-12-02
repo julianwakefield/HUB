@@ -10,11 +10,11 @@
         <h5><%= @user.email.upcase %></h5>
         <div class="user-top-item-achievements">
         <div class="gamesplayed">
-          <i class="fas fa-gamepad"><p>100</p></i>
+          <i class="fas fa-gamepad"><p><%= current_user.friends.count %></p></i>
          
         </div>
         <div class="achievements">
-          <i class="fas fa-trophy"><p>100</p></i>
+          <i class="fas fa-trophy"><p><%= @posts.count %></p></i>
           
         </div>
         </div>
