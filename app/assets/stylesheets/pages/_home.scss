@@ -108,12 +108,12 @@ html,.wrap {
 	position: relative;
 	z-index: -1;
   }
-  
+
   #toggle:checked ~ dialog {
   display: block;
   background-color: grey;
   }
-  
+
   label{
 	background: skyblue;
 	color: white;
@@ -126,7 +126,7 @@ html,.wrap {
 	  transform: translateY(-10px);
 	}
   }
-  
+
   dialog{
 	animation: appear 350ms ease-in 1;
 	position: fixed;
@@ -144,11 +144,17 @@ html,.wrap {
     background-color: transparent;
     margin-left: -13px;
     color: white;
-	border: 2px solid white;
-	border-radius: 0px;
-
-
+	  border: 2px solid white;
+	  border-radius: 0px;
   }
+
+  .popupbutton:hover {
+    background: #574a4a;
+    transition: all .25s ease-in-out;
+    text-decoration: none;
+    color: rgb(139,149,158);
+  }
+
   .popupclose {
     background-color: transparent;
     color: white;
