@@ -1,4 +1,3 @@
-require 'byebug'
 require 'nokogiri'
 require 'open-uri'
 Article.destroy_all
@@ -15,7 +14,6 @@ gamelist = doc.css("ea-game-box").first(25).each do |game|
         game1 = Game.new
         game1.name = title
         game1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-        # byebug
         game1.save
     rescue
     end
