@@ -24,8 +24,18 @@
 
 
 .club {
-    margin-top: 16px;
-    background-color: #fa3c6e;
+  margin-top: 16px;
+  background-color: transparent;
+  padding: 18px 30px 18px 30px;
+  margin-bottom: 16px;
+  border-radius: 50px;
+  font-family: 'Whitney Medium';
+  border: 1px solid white;
+}
+
+.club:hover {
+  background-color: #fa3c6e;
+  border: 1px solid #fa3c6e;
 }
 
 /////////////////////////////////////////
@@ -385,38 +395,35 @@ figcaption {
     }
 }
 
-
-
 .exclusive-container-top {
-    display: flex;
     background-color: #202020;
     flex-wrap: wrap;
     padding: 24px;
     text-align: left;
 }
 
-
-.club-spacer {
-    height: 50px;
-}
+// .club-spacer {
+//     height: 50px;
+// }
 
 .exclusive-left-top {
     width: 60%;
     padding: 8px;
-
+    margin: auto;
     img {
         width: 100%;
     }
 }
 
 .exclusive-right-top {
-    width: 40%;
-    text-align: left;
+    width: 100%;
+    text-align: center;
     padding: 8px;
+    padding-bottom: 30px;
     p {
         margin-bottom: 0px;
+        font-family: Whitney Medium;
     }
-
 }
 
 .exclusive-container-bottom {
@@ -426,7 +433,6 @@ figcaption {
     margin-bottom: 24px;
     padding: 24px;
     background-color: #fa3c6e;
-
 }
 
 .exclusive-left-bottom {
@@ -450,7 +456,9 @@ figcaption {
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .club-item {
@@ -463,10 +471,9 @@ figcaption {
     }
     p {
         margin-bottom: 0px;
-
+        font-family: Whitney Medium;
     }
 }
-
 
 .searchbar-container {
     width: 200px;
@@ -506,7 +513,6 @@ figcaption {
     transition: all .2s;
     transition-delay: .1s;
 }
-
 
   .button:hover {
     cursor: pointer;
