@@ -4,18 +4,6 @@
     padding-right: 12%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .dashboard-top {
     display: flex;
     justify-content: space-between;
@@ -39,9 +27,6 @@
     margin-top: 16px;
     background-color: #fa3c6e;
 }
-
-
-
 
 /////////////////////////////////////////
 
@@ -79,7 +64,7 @@
     display: inline-grid;
   }
 
-  
+
 .vm {
     vertical-align: middle;
 }
@@ -154,7 +139,7 @@ figure {
         transform-origin: center top;
         transform-style: preserve-3d;
         transform: translateZ( 0 );
-        transition: .3s;    
+        transition: .3s;
         }
 
         img {
@@ -194,7 +179,7 @@ figure {
         &:hover, &:focus, &:active {
             box-shadow: 0 8px 16px 3px rgba( #000, .8 );
             transform: translateY( -3px ) scale( 1.05 ) rotateX( 15deg );
-        
+
             figcaption{
                 transform: none;
 
@@ -214,7 +199,7 @@ figure {
 }
 
 
-            
+
 .news{
     background-color: #202020;
     display: flex;
@@ -488,11 +473,12 @@ figcaption {
     height: 100%;
     position: relative;
   }
-  
+
   h1 {
-    margin: 2rem;  
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
-  
+
   .searchbar {
     width: 200px;
     height: 26px;
@@ -507,11 +493,11 @@ figcaption {
     color: white;
     background-color: #2a2a2a;
   }
-  
+
   .searchbar:hover {
     width: 200px;
   }
-  
+
   .search-button {
     height: 18px;
     position: absolute;
@@ -520,18 +506,18 @@ figcaption {
     transition: all .2s;
     transition-delay: .1s;
 }
-  
-  
+
+
   .button:hover {
     cursor: pointer;
   }
-  
+
   .searchbar:hover + .button {
     height: 2.5rem;
     top: 1.8rem;
     right: 0;
   }
-  
+
   .searchbar::placeholder {
     opacity: .5;
   }
