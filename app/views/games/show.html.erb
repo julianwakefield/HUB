@@ -1,27 +1,20 @@
 
 <div class="topspace">
-<div class="top-show">
-    <h3><%= @game.name %> </h3>
-  </div>
-<div class="show-top">
-  <% if @game.video_link %>
-    <div class="video-responsive">
-      <iframe src="<%= @game.video_link %>" width="1000" height="630" frameborder="0"></iframe>  </div>
-    </div>
-  <% end %>
 
-<div class="show-container">
-  <div class="show-box-left"><h1></h1>
+  <div class="top-show">
+    <h2><%= @game.name %> </h2>
+  </div>
+
+ 
+
+  <div class="show-container">
+    <div class="show-box-left">
       <div class="show-photo">
         <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
+      
 
-      <%= simple_form_for([@game,@post]) do |f| %>
-        <%= f.input :content, label: false  %>
-        <%= f.input :photo, as: :file, label: false  %>
-        <%= f.button :submit, "Create New Post", class: "create-post-button " %>
-      <% end %>
-
+     
       <% user_game =  current_user.user_games.find_by(game: @game) %>
         <% if user_game.nil?  %>
           <%= link_to  game_user_games_path(@game), method: :post do %>
@@ -35,44 +28,77 @@
          <%= link_to game_path(@game), method: :delete do %>
          <i class="fas fa-gamepad"></i>
          <% end %>
+ <% unless @game.chats.empty? %>
+ <div class="">
+    <h3 class="white-name"><%= @game.chats.first.name %> chat</h3>
+    <%= render 'messages/message', chat: @game.chats.first  %>
+    <div class="">
+      <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
+        <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
+        <%= f.submit %>
+    <% end %>
+    </div>
   </div>
+  <% end %>
+  </div>   
+   </div>
 
-<div class="show-box-right">
-  <ul><% @posts.each do |post| %>
-    <li>
-      <% if post.photo.attached? %>
-      <%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %>
+   
+
+    <div class="show-box-right">
+      <div class="">
+        <% if @game.video_link %>
+          <div class="video-responsive">
+            <iframe src="<%= @game.video_link %>" width="1000" height="630" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://www.youtube.com/embed/NVdf7KrevF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        <% end %>
+      </div>
+
+        <%= simple_form_for([@game,@post]) do |f| %>
+        <%= f.input :content, label: false  %>
+        <%= f.input :photo, as: :file, label: false  %>
+        <%= f.button :submit, "Create New review", class: "create-post-button " %>
       <% end %>
-     <h5><%= post.content %></h5>
-      <% if post.user == current_user %>
-       <br><%= link_to 'Delete Post'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
-       <% end %>
-      <% post.comments.each do |comment| %>
-       <p class="comments"> <%= comment.content %>
-       <% if comment.user == current_user %>
-       <br><%= link_to 'Delete comment'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
-       <% end %>
-      <% end %> 
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
-      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-           <h5><%= post.content %></h5>
-              <% post.comments.each do |comment| %>
-                <ul>
-                  <li>
-                    <div class="posts-modal-box"><p class="modal-content"><%= comment.content %></p></div>
-                    <div><p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p></div>
-                  </li>
-                </ul>
-                    <% end %>
-                      <%= simple_form_for [@game,post,@comment] do |f| %>
-                      <%= f.input :content, label: false %>
-                      <%= f.submit :comment, class: 'modal-button' %>
-                      <% end %>
-                </li>
-                <% end %>
-            </ul>
+
+
+      <ul><% @posts.each do |post| %>
+        <li>
+          <% if post.photo.attached? %>
+            <%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+
+          <h5><%= post.content %></h5>
+
+          <% if post.user == current_user %>
+            <br><%= link_to 'Delete review'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
+          <% end %>
+
+          <% post.comments.each do |comment| %>
+            <p class="comments"> <%= comment.content %>
+            <% if comment.user == current_user %>
+              <br><%= link_to 'Delete comment'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
+           <% end %>
+          <% end %> 
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
+          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+              <h5><%= post.content %></h5>
+                  <% post.comments.each do |comment| %>
+                    <ul>
+                      <li>
+                        <div class="posts-modal-box"><p class="modal-content"><%= comment.content %></p></div>
+                        <div><p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p></div>
+                      </li>
+                    </ul>
+                        <% end %>
+                          <%= simple_form_for [@game,post,@comment] do |f| %>
+                          <%= f.input :content, label: false %>
+                          <%= f.submit :comment, class: 'modal-button' %>
+                          <% end %>
+        </li>
+                  <% end %>
+       </ul>
           </div>
         </div>
       </div>
@@ -80,10 +106,11 @@
   </div>
 </div>
 </div>
+<% unless @game.chats.empty? %>
   <div class="show-forum">
-    <h1 class="white-name"><%= @game.chats.first.name</h1> %>
-    <%= render 'messages/message', chat: @game.chats.first  %>
-    <% <div class="chat-box"> %>
+    <h1 class="white-name"><%= @game.chats.first.name %></h1>
+   <%= render 'messages/message', chat: @game.chats.first  %> 
+    <div class="chat-box">
       <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
         <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
         <%= f.submit %>
@@ -92,4 +119,5 @@
   </div>
 <%= link_to 'Go back to games',  games_path %>
 </div>
+<% end %>
 </div>
