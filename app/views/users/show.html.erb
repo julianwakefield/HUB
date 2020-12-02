@@ -10,11 +10,11 @@
         <h5><%= @user.email.upcase %></h5>
         <div class="user-top-item-achievements">
         <div class="gamesplayed">
-          <i class="fas fa-gamepad"><p>100</p></i>
+          <i class="fas fa-gamepad"><p><%= current_user.friends.count %></p></i>
          
         </div>
         <div class="achievements">
-          <i class="fas fa-trophy"><p>100</p></i>
+          <i class="fas fa-trophy"><p><%= @posts.count %></p></i>
           
         </div>
         </div>
@@ -74,27 +74,41 @@
       
       
       <div class="show-container">
-       <div class="user-form">
+      <div class="user-form">
         
-        <h1>Friends</h1><%if @user.friends.present? %><%@user.friends.each do |friend| %>
-        <ul>
-          <li>
+        <h5>Friends</h5>
+         <div>
+        <%if @user.friends.present? %>
           <div class="user-top-item-little-photo">
+          <%@user.friends.each do |friend| %>
+           <p>
             <%if friend.photo.attached? %>
               <%= cl_image_tag friend.photo.key %>
+             
             <%else %>
               <img src="https://i.imgur.com/FG38kjI.png"> 
-            <%end%> 
-            <p><%= link_to friend.nickname, user_path(friend) %></p>
-          </li><%if @user == current_user %><%= link_to "remove friend", remove_friends_path(user: friend.id), method: :post %><%end %><%end %><%else %>
-          <li style="list-style: none; display: inline">
-            <p><%= @user.nickname %> doesn't have any friends yet</p><%end %>
-          </li>
-        </ul>
-       </div>
+            <%end%>
+             
+            <%= link_to friend.nickname, user_path(friend) %>
+            <%if @user == current_user %>
+              <%= link_to "remove friend", remove_friends_path(user: friend.id), method: :post %>
+            <%end %>
+            </p>
+          <%end %>
+         </div>
+        <%else %>
+          <p><%= @user.nickname %> doesn't have any friends yet</p>
+        </div>
+        <%end %>
+      </div>    
+      </div>
+         
+
+     
+      
        <div class="user-comments">
       
-      <h1>Who's Online?</h1>
+      <h5>Recently played with</h5>
         <div>
           <%@users.each do |user| %>
           <div class="user-top-item-little-photo">
@@ -103,18 +117,18 @@
             <%else %>
               <img src="https://i.imgur.com/FG38kjI.png"> 
             <%end%> 
-            <i class="fas fa-circle">
-            </i> <%= link_to user.nickname, user_path(user) %> 
+            <%= link_to user.nickname, user_path(user) %> 
             <%unless current_user.friends_with?(user) %> 
               <%if @user == current_user %> 
                 <%= link_to add_friends_path(user: user.id), method: :post, remote: true do %> 
                   <i class="fas fa-user-plus"></i> 
                 <%end %> 
               <%end %>
+               </div>
             <%end %> 
             <%end %>
            </div>
-          </div> </div>
+          </div> 
         </div>
       </div>
       

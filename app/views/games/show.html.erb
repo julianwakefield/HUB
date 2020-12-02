@@ -10,7 +10,7 @@
   <div class="show-container">
     <div class="show-box-left">
       <div class="show-photo">
-        <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @game.photo.key, height: 300, width: 300, crop: :fill %>
       </div>
       
 
@@ -56,7 +56,7 @@
       <div class="">
         <% if @game.video_link %>
           <div class="video-responsive">
-            <iframe src="<%= @game.video_link %>" width="1000" height="1000" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://www.youtube.com/embed/NVdf7KrevF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="<%= @game.video_link %>" width="600" height="600" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://cdn.cloudflare.steamstatic.com/steam/apps/256800646/movie480_vp9.webm?t=1600292872" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         <% end %>
       <h5 class="white-name">Reviews</h5>
@@ -81,30 +81,6 @@
           <% if post.user == current_user %>
             <br><%= link_to 'Delete review'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
           <% end %>
-
-          <% post.comments.each do |comment| %>
-            <p class="comments"> <%= comment.content %>
-            <% if comment.user == current_user %>
-              <br><%= link_to 'Delete comment'.html_safe, comment_path(comment), method: :delete, class: "delete-button" %></p>
-           <% end %>
-          <% end %> 
-          <button type="button" class="create-post-button " data-toggle="modal" data-target=".bd-example-modal-lg">Comment</button>
-          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-              <h5><%= post.content %></h5>
-                  <% post.comments.each do |comment| %>
-                    <ul>
-                      <li>
-                        <div class="posts-modal-box"><p class="modal-content"><%= comment.content %></p></div>
-                        <div><p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p></div>
-                      </li>
-                    </ul>
-                        <% end %>
-                          <%= simple_form_for [@game,post,@comment] do |f| %>
-                          <%= f.input :content, label: false %>
-                          <%= f.submit :comment, class: 'modal-button' %>
-                          <% end %>
         </li>
                   <% end %>
        </ul>
@@ -121,6 +97,7 @@
 
 
 
+<<<<<<< HEAD
 <% unless @game.chats.empty? %>
 >>>>>>> 501a65630b91bc514ea989d3e2b14c36b7f08e2f
   <div class="show-forum">
@@ -137,4 +114,6 @@
 </div>
 <% end %>
 </div>
+=======
+>>>>>>> 5eacfca917316b65ad40b6216d1725e9fee8bb9c
 

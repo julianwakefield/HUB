@@ -48,7 +48,9 @@ html { height: 100%; }
   }
 }
 
-
+h5 {
+  color: grey;
+}
 
 .user-top-item-space {
   width: 50%;
@@ -251,6 +253,9 @@ body {
  p {
    margin-bottom: 8px;
    padding-left: 0px;
+   font-weight: normal;
+   font-family: 'Whitney', "Trebuchet MS", sans-serif;
+  color: white;
  }
 
 }
