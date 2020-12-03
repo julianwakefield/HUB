@@ -1,3 +1,15 @@
+.big-footer {
+  padding-left: 12%;
+  padding-right: 12%;
+  background-color: rgb(19,19,19);
+}
+.shrink {
+  padding-left: 6.45%;
+  padding-right: 6.45%;
+  padding-top: 35px;
+}
+
+
 .dashboardbody {
     color: white;
     padding-left: 12%;
@@ -500,10 +512,8 @@ figcaption {
 
   h4 {
     margin-bottom: 32px;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left;
     margin-top: 25px;
     color: white;
   }
@@ -563,7 +573,7 @@ figcaption {
   color: white;
   position: absolute;
   left: 0;
-  bottom: 60px;
+  bottom: 102px;
   &:focus {
     outline: none;
   }
@@ -577,7 +587,7 @@ figcaption {
   color: white;
   position: absolute;
   right: 0;
-  bottom: 60px;
+  bottom: 102px;
   &:focus {
     outline: none;
   }
@@ -586,4 +596,11 @@ figcaption {
 .controls {
   width: 100%;
   position: relative;
+}
+
+
+.games {
+  background-color: rgb(33,33,33);
+  padding-top: 25px;
+  padding-bottom: 35px;
 }

@@ -17,7 +17,7 @@
     color: grey;
     text-align: center;
     background-color: #2a2a2a;
-   
+
 }
 
 .footer-bottom {
@@ -33,10 +33,10 @@
     color: #2a2a2a;
    padding-top: 3px;
 }
-    
+
 .top-footer {
     margin-bottom: 31px;
-    
+
 }
 
 
@@ -64,14 +64,14 @@
         i:hover {
             color: #fa3c6e;
             transition: all .25s ease-in-out;
-        
-            }   
-            
+
+            }
+
         h4:hover {
             color: #fa3c6e;
             transition: all .25s ease-in-out;
-            } 
-        
+            }
+
         span:hover {
             color: #fa3c6e;
             transition: all .25s ease-in-out;
@@ -97,7 +97,7 @@
 .footer-middle-right {
     // width: 10%;
     text-align: left;
-    
+
 }
 
 .footer-right {
@@ -113,7 +113,7 @@
     bottom: 0;
     right: 0;
     display: inline-flex;
-    
+
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -123,33 +123,33 @@
     width: 60px;
     height: 60px;
     background-color: #F8F8F8;
-    
+
     &.show {
         visibility: visible;
         opacity: 1;
         background-color: grey;
     }
-    
+
     &.hide {
         visibility: hidden;
         opacity: 0;
     }
-    
+
     svg {
     fill: #7e806f;
     width: 24px;
     height: 12px;
     }
-    
+
     &:hover {
     background-color: #E8E8E8;
-    
+
     svg {
     fill: #000000;
     }
     }
     }
-    
+
     // Text meant only for screen readers.
     .screen-reader-text {
     position: absolute;
@@ -162,7 +162,7 @@
     overflow: hidden;
     word-wrap: normal !important;
     clip: rect(1px, 1px, 1px, 1px);
-    
+
     &:focus {
     display: block;
     top: 5px;
