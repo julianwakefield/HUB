@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+Message.destroy_all
 Article.destroy_all
 Game.destroy_all
 
