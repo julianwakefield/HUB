@@ -40,6 +40,8 @@
         <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
         <%= f.submit %>
     <% end %>
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="46vh" ><%=@game.twitter%></a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  
   <%= link_to 'Go back to games',  games_path %>
     </div>
@@ -88,42 +90,5 @@
        </ul>
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f0bdec0a0f51149bad340d7ee458e1ed32c22ccd
-
-
-
-<<<<<<< HEAD
-<% unless @game.chats.empty? %>
->>>>>>> 501a65630b91bc514ea989d3e2b14c36b7f08e2f
-  <div class="show-forum">
-    <h3 class="white-name"><%= @game.chats.first.name %></h3>
-   <%= render 'messages/message', chat: @game.chats.first  %> 
-    <div class="chat-box">
-      <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
-        <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
-        <%= f.submit %>
-    </div>
-    <% end %>
-  </div>
-<%= link_to 'Go back to games',  games_path %>
-</div>
-<% end %>
-</div>
-=======
->>>>>>> 5eacfca917316b65ad40b6216d1725e9fee8bb9c
-
-<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="46vh" ><%=@game.twitter%></a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+  
 </div>
