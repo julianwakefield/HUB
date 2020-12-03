@@ -35,16 +35,16 @@
  <div class="">
     <h3 class="white-name"><%= @game.chats.first.name %> chat</h3>
     <%= render 'messages/message', chat: @game.chats.first  %>
-    <div class="">
+    <div class="mb-4">
       <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
         <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
         <%= f.submit %>
     <% end %>
+    </div>
 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="46vh" ><%=@game.twitter%></a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  
   <%= link_to 'Go back to games',  games_path %>
-    </div>
   </div>
 
   <% end %>
