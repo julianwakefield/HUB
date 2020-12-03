@@ -1,5 +1,8 @@
-
+<% if params[:controller] == "games" && params[:action] == "show" %>
+  <div class="game_show-big-footer <%= 'shrink' if action_name == "index" && controller_name == 'games' %>">
+<% else %>
 <div class="big-footer <%= 'shrink' if action_name == "index" && controller_name == 'games' %>">
+<% end %>
     <div class="footer">
         <div class="footer-top">
         <div class="footer-left">

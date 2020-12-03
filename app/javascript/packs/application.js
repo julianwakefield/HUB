@@ -49,6 +49,7 @@ document.addEventListener('turbolinks:load', () =>{
       tab.click();
   //   });
   // })
+  time_is_widget.init({London_z716:{}});
 });
 
 
