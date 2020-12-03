@@ -9,40 +9,40 @@
 }
 
 .show-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: 10%;
-    margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.show-box-left {
+  width:30%;
+  background-color: #2a2a2a;
+  padding: 26px;
+  .form-control {
+  background-color: grey;
+  border: 0px;
+
   }
-  .show-box-left {
-    width:30%;
-    background-color: #2a2a2a;
-    padding: 26px;
-    .form-control {
+  .form-control-file {
+    display: block;
+    width: 100%;
     background-color: grey;
-    border: 0px;
-
-    }
-    .form-control-file {
-      display: block;
-      width: 100%;
-      background-color: grey;
-    }
-    #post_photo button {
-      background-color: red;
-    }
-
   }
-  .show-box-right {
-    width:70%;
-    background-color: #2a2a2a;
-    padding: 26px;
-    ul li .btn {
-      background-color: grey;
-      border-color: grey;
-    }
+  #post_photo button {
+    background-color: red;
   }
+
+}
+.show-box-right {
+  width:70%;
+  background-color: #2a2a2a;
+  padding: 26px;
+  ul li .btn {
+    background-color: grey;
+    border-color: grey;
+  }
+}
 
   .video-responsive{
     overflow:hidden;
