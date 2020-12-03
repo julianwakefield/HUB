@@ -1,7 +1,13 @@
 .show-top {
   background-color: #202020;
+ 
+}
+
+
+.show-page {
   margin-left: 10%;
   margin-right: 10%;
+  height: 1200px;
 }
 
 .show-container {
@@ -13,7 +19,7 @@
   }
   .show-box-left {
     width:30%;
-    background-color: #202020;
+    background-color: #2a2a2a;
     padding: 26px;
     .form-control {
     background-color: grey;
@@ -32,7 +38,7 @@
   }
   .show-box-right {
     width:70%;
-    background-color: #333b3f;
+    background-color: #2a2a2a;
     padding: 26px;
     ul li .btn {
       background-color: grey;
@@ -45,8 +51,7 @@
     padding-bottom:56.25%;
     position:relative;
     height:0;
-    border-bottom: 4px solid black;
-    margin-bottom: 8px;
+  
 }
 .video-responsive iframe{
     left:0;
@@ -63,9 +68,10 @@
 
 .show-photo {
   img {
-  width: 100%;
-  object-fit: cover;
-  margin-bottom: 8px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    height: 394px;
   }
 }
 
@@ -75,10 +81,10 @@
 }
 
 .top-show {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  margin-left: 10%;  
-  margin-right: 10%;
+  // margin-top: 24px;
+  // margin-bottom: 24px;
+  // margin-left: 10%;  
+  // margin-right: 10%;
 
   background-color: #2a2a2a;
   text-align: center;

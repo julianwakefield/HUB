@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_152058) do
+ActiveRecord::Schema.define(version: 2020_12_03_083514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 2020_12_01_152058) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "feeds", force: :cascade do |t|
+    t.string "username", default: "HUB", null: false
+    t.string "body", null: false
+    t.integer "likes_count", default: 0, null: false
+    t.integer "reposts_count", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendships", id: :serial, force: :cascade do |t|
     t.string "friendable_type"
     t.integer "friendable_id"
@@ -79,6 +88,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_152058) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "video_link"
+    t.string "twitter"
   end
 
   create_table "link_to_conversations", force: :cascade do |t|

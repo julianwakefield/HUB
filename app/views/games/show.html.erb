@@ -1,6 +1,7 @@
 
 <div class="topspace">
-
+</div>
+<div class="show-page">
   <div class="top-show">
     <h1><%= @game.name %> </h1>
   </div>
@@ -56,7 +57,7 @@
       <div class="">
         <% if @game.video_link %>
           <div class="video-responsive">
-            <iframe src="<%= @game.video_link %>" width="600" height="600" frameborder="0"></iframe>  <iframe width="560" height="315" src="https://cdn.cloudflare.steamstatic.com/steam/apps/256800646/movie480_vp9.webm?t=1600292872" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="<%= @game.video_link %>" width="600" height="600" frameborder="0"></iframe>
           </div>
         <% end %>
       <h5 class="white-name">Reviews</h5>
@@ -87,6 +88,7 @@
        </ul>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
     </div>
   </div>
@@ -95,6 +97,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> f0bdec0a0f51149bad340d7ee458e1ed32c22ccd
 
 
 
@@ -118,3 +122,8 @@
 =======
 >>>>>>> 5eacfca917316b65ad40b6216d1725e9fee8bb9c
 
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="46vh" ><%=@game.twitter%></a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</div>

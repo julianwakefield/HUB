@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @feed.username %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @feed.body %>
+</p>
+
+<p>
+  <strong>Likes count:</strong>
+  <%= @feed.likes_count %>
+</p>
+
+<p>
+  <strong>Reposts count:</strong>
+  <%= @feed.reposts_count %>
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>
