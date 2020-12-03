@@ -1,5 +1,5 @@
 meta_product_name: "HUB"
 meta_title: "HUB - a platform for you to connect, share, and embrace the new world of online gaming"
 meta_description: "We're making gaming simple again. One place to talk, browse, connect, and launch. Buckle up."
-meta_image: "hubdark1.png" # should exist in `app/assets/images/`
+meta_image: "FBhub.png" # should exist in `app/assets/images/`
 htwitter_account: "@TobiasBullers"   # required for Twitter Cards

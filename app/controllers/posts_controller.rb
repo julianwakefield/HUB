@@ -36,13 +36,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to game_path(@game)
+    redirect_back fallback_location: "/users"
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to game_path(@post.game)
+    redirect_back fallback_location: "/users"
   end
   private
   def post_params
