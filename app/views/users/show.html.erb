@@ -34,7 +34,7 @@
           <div class="user-form">
           <%= simple_form_for([current_user,@post]) do |f| %><%= f.input :content, label: false  %>
           <div class="show-submit">
-            <%= f.input :photo, as: :file, label: false  %><%= f.button :submit, "Create New Post", class: "create-post-button-1 " %><%end %>
+            <%= f.input :photo, as: :file, label: false  %><%= f.button :submit, "Create New Post", remote: true, class: "create-post-button-1 " %><%end %>
           </div>
 
           </div>
@@ -56,7 +56,7 @@
                           <p class="modal-content"><%= comment.content %></p>
                         </div>
                         <div>
-                          <p class="modal-button"><%= link_to 'delete', comment_path(comment), method: :delete %></p>
+                          <p class="modal-button"><%= link_to 'delete', comment_path(comment), remote: true, method: :delete %></p>
                         </div>
                       </li>
                     </ul><%end %><%= simple_form_for [current_user,post,@comment] do |f| %><%= f.input :content, label: false %><%= f.submit :comment, class: 'modal-button' %><%end %>
@@ -91,7 +91,7 @@
              
             <%= link_to friend.nickname, user_path(friend) %>
             <%if @user == current_user %>
-              <%= link_to "remove friend", remove_friends_path(user: friend.id), method: :post %>
+              <%= link_to "remove friend", remove_friends_path(user: friend.id), remote: true, method: :post %>
             <%end %>
             </p>
           <%end %>

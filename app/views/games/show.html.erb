@@ -18,11 +18,11 @@
      
       <% user_game =  current_user.user_games.find_by(game: @game) %>
         <% if user_game.nil?  %>
-          <%= link_to  game_user_games_path(@game), method: :post do %>
+          <%= link_to  game_user_games_path(@game), method: :post, remote: true do %>
           <i class="far fa-thumbs-up"></i>
           <% end %>
         <% else %>
-          <%= link_to user_game_path(user_game), method: :delete do %>
+          <%= link_to user_game_path(user_game), method: :delete, remote: true do %>
           <i class="far fa-thumbs-down"></i>
           <% end %>
         <% end %>
@@ -81,7 +81,7 @@
 
 
           <% if post.user == current_user %>
-            <br><%= link_to 'Delete review'.html_safe, post_path(post), method: :delete, class: "delete-button" %></p>
+            <br><%= link_to 'Delete review'.html_safe, post_path(post), method: :delete, remote: true, class: "delete-button" %></p>
           <% end %>
         </li>
                   <% end %>
