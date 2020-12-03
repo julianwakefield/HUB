@@ -10,6 +10,7 @@
   height: 365px;
   object-fit: cover;
   background-size: 300px;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +72,7 @@ a:hover {
 }
 
 #index-all {
-  background-color: #202020;
+  background-color: rgb(42,42,42);
     margin-top: -10px;
     padding-top: 24px;
     padding-bottom: 24px;
