@@ -12,11 +12,11 @@
             <p><%= game.name %></p>
             <% user_game =  current_user.user_games.find_by(game: game) %>
               <% if user_game.nil?  %>
-                <%= link_to game_user_games_path(game), method: :post do %>
+                <%= link_to game_user_games_path(game), remote: true, method: :post do %>
                   <div class="favs">Favourite?</div>
                 <% end %>
               <% else %>
-                <%= link_to user_game_path(user_game), method: :delete do %>
+                <%= link_to user_game_path(user_game), remote: true, method: :delete do %>
                   <div class="favs-tick"><i class="far fa-bookmark"></i></div>
                   <div class="favs">Unfavourite?</div>
                 <% end %>

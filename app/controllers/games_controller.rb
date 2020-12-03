@@ -28,8 +28,8 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @games = game.find(params[:id])
-    @games = @games.game
+    @game = Game.find(params[:id])
+    @games = Game.all
   end
 
   def update
