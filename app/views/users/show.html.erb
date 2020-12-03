@@ -12,11 +12,11 @@
         <div class="gamesplayed">
 
           <i class="fas fa-user-friends"><p><%= current_user.friends.count %></p></i>
-         
+
         </div>
         <div class="achievements">
           <i class="fas fa-newspaper"><p><%= @posts.count %></p></i>
-          
+
 
         </div>
         </div>
@@ -90,14 +90,15 @@
            <p>
             <%if friend.photo.attached? %>
               <%= cl_image_tag friend.photo.key %>
-
             <%else %>
               <img src="https://i.imgur.com/FG38kjI.png">
             <%end%>
 
-            <%= link_to friend.nickname, user_path(friend) %>
             <%if @user == current_user %>
-              <%= link_to "remove friend", remove_friends_path(user: friend.id), remote: true, method: :post %>
+              <%= link_to remove_friends_path(user: friend.id), remote: true, method: :post, remote: true do %>
+              <i class="fas fa-minus-circle"></i>
+                <%end %>
+            <%= link_to friend.nickname, user_path(friend) %>
             <%end %>
             </p>
           <%end %>
@@ -116,22 +117,22 @@
 
       <h5>Recently played with</h5>
         <div>
-          <%@users.each do |user| %>
+          <%@strangers.each do |user| %>
           <div class="user-top-item-little-photo">
             <%if user.photo.attached? %>
               <%= cl_image_tag user.photo.key %>
             <%else %>
               <img src="https://i.imgur.com/FG38kjI.png">
             <%end%>
-            <%= link_to user.nickname, user_path(user) %>
             <%unless current_user.friends_with?(user) %>
               <%if @user == current_user %>
                 <%= link_to add_friends_path(user: user.id), method: :post, remote: true do %>
-                  <i class="fas fa-user-plus"></i>
+                <i class="fas fa-plus-circle"></i>
                 <%end %>
               <%end %>
-               </div>
             <%end %>
+            <%= link_to user.nickname, user_path(user) %>
+               </div>
             <%end %>
            </div>
           </div>
@@ -144,4 +145,4 @@
 </div>
 </div>
 </div>
-
+</div>

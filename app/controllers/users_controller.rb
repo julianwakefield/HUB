@@ -7,18 +7,13 @@ class UsersController < ApplicationController
   end
   # GET /users/:id
 
-
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user: @user).order(created_at: :desc)
     @comment = Comment.new
     @post = Post.new
+    @strangers = (User.all - current_user.friends) - [current_user]
   end
-
-
-
-
-
 
   def add_friends
     @user = User.find(params[:user])
@@ -36,13 +31,12 @@ class UsersController < ApplicationController
   # GET /users
   private
 
-    def set_users
-      @users =  User.where.not id: current_user.id
-    end
+  def set_users
+    @users = User.where.not id: current_user.id
+  end
 
-    def user_params
-      params.require(:user).permit(:photo, :nickname)
-    end
+  def user_params
+    params.require(:user).permit(:photo, :nickname)
+  end
 
 end
-
