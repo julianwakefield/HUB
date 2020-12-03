@@ -10,11 +10,11 @@
         <h5><%= @user.email.upcase %></h5>
         <div class="user-top-item-achievements">
         <div class="gamesplayed">
-          <i class="fas fa-gamepad"><p><%= current_user.friends.count %></p></i>
+          <i class="fas fa-user-friends"><p><%= current_user.friends.count %></p></i>
          
         </div>
         <div class="achievements">
-          <i class="fas fa-trophy"><p><%= @posts.count %></p></i>
+          <i class="fas fa-newspaper"><p><%= @posts.count %></p></i>
           
         </div>
         </div>
@@ -27,8 +27,12 @@
     </div>
 
     <div class="tabs">
-      <input class="input" id="tab-2" name="tabs" style="display:block" type="radio" > <label class="label" for="tab-2" id="defaultOpen">Wall</label>
-      <div class="panel">
+      <input class="input" id="tab-2" name="tabs" style="display:block" type="radio" checked />
+      <label class="label" for="tab-2" id="defaultOpen">
+        Wall
+
+      </label>
+      <div class="panel default">
         <div class="area">
           <div class="show-container">
           <div class="user-form">
@@ -135,5 +139,6 @@
       
       
       </div>
+</div>
 </div>
 </div>
