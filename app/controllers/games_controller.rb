@@ -33,7 +33,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = game.find(params[:id])
+    @game = Game.find(params[:id])
     @game.update(game_params)
     redirect_to game_path(@game)
   end
