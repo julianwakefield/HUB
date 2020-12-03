@@ -173,7 +173,7 @@ body {
 }
 
 .input:focus + .label {
-  box-shadow: inset 0px 0px 0px 3px #2aa1c0;
+
   z-index: 1;
 }
 
@@ -188,6 +188,7 @@ body {
   .label {
     width: 50%;
     border-bottom: 2px solid grey;
+    border-radius: 0px;
   }
 }
 
