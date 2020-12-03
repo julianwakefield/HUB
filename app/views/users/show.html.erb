@@ -87,7 +87,7 @@
         <%if @user.friends.present? %>
           <div class="user-top-item-little-photo">
           <%@user.friends.each do |friend| %>
-           <p>
+           <p class="friends-line">
             <%if friend.photo.attached? %>
               <%= cl_image_tag friend.photo.key %>
             <%else %>

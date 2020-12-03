@@ -3,7 +3,7 @@
 <div class="index-text">
   <h4>Browse all games</h4>
 </div>
-<div class="container" id="index-all">
+<div class="harry-container" id="index-all">
   <div class="cards">
     <% @games.each do |game| %>
         <div class="card-category" style="background-image: url('<%= cl_image_path game.photo.key %>')">

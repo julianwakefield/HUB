@@ -15,7 +15,7 @@ html { height: 100%; }
   height: auto;
   padding: 8px;
   align-items: center;
-  background: #202020;
+  background: rgb(42,42,42);
 }
 
 
@@ -130,7 +130,7 @@ body {
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  background: #202020;
+  background: rgb(42,42,42);
   box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
   padding-top: 32px;
   margin-bottom: 32px;
@@ -227,11 +227,13 @@ body {
   align-items: center;
   flex-grow: 5;
   height: 100%;
+  margin-bottom: 5px;
   img {
     height: 28px;
     width: 28px;
     object-fit: cover;
     margin-right: 10px;
+    border-radius: 50%;
   }
   a {
     margin-right: 10px;
@@ -320,4 +322,8 @@ ul {
 
 .timeline-Widget {
   margin-top:20px;
+}
+
+.friends-line {
+  margin-bottom: 5px;
 }
