@@ -46,7 +46,7 @@
           </div>
           <div class="user-comments">
           <ul>
-            <%current_user.posts.each do |post| %>
+            <% @posts.each do |post| %>
             <li class="show-comments">
               <%if post.photo.attached? %><%= cl_image_tag post.photo.key, height: 100, width: 100, crop: :fill %><%end %>
               <p><%= post.content %></p><%if post.user == current_user %><%= link_to 'Delete Post'.html_safe, post_path(post), method: :delete, class: "delete-button" %><%end %><%post.comments.each do |comment| %>
