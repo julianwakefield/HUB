@@ -142,3 +142,14 @@
 .span-font {
   font-size:12px;
 }
+
+.icons-game-show {
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  justify-content: center;
+  i {
+    margin: 0 10px;
+    font-size: 30px;
+  }
+}

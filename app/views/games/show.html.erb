@@ -17,33 +17,23 @@
 
 
       <% user_game =  current_user.user_games.find_by(game: @game) %>
+      <div class="icons-game-show">
       <% if user_game.nil?  %>
         <%= link_to  game_user_games_path(@game), method: :post, remote: true do %>
-          <i class="far fa-thumbs-up"></i>
+          <i class="fas fa-thumbs-up"></i>
         <% end %>
       <% else %>
         <%= link_to user_game_path(user_game), method: :delete, remote: true do %>
-          <i class="far fa-thumbs-down"></i>
+          <i class="fas fa-thumbs-down"></i>
         <% end %>
       <% end %>
       <%= link_to game_path(@game), method: :delete do %>
         <i class="fas fa-gamepad"></i>
       <% end %>
+      </div>
 
-      <% unless @game.chats.empty? %>
 
-        <div class="">
-          <h3 class="white-name"><%= @game.chats.first.name %> chat</h3>
-          <%= render 'messages/message', chat: @game.chats.first  %>
-          <div class="mb-4">
-            <%= simple_form_for [ @game.chats.first, @message ], remote: true do |f| %>
-              <%= f.input :message, label: false, placeholder: "Message ##{@game.chats.first.name}" %>
-              <%= f.submit %>
-            <% end %>
-          </div>
-                  </div>
-      <% end %>
-      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="46vh" ><%=@game.twitter%></a>
+      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/<%=@game.twitter%>" data-widget-id="539487832448843776" height="70vh" ><%=@game.twitter%></a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
